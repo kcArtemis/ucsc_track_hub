@@ -20,7 +20,7 @@ dragAndDrop subTracks
 track midbrain_comp2
 parent midbrain_super
 compositeTrack on
-shortLabel Midbrain ATAC Tracks
+shortLabel Midbrain ATAC Tracks  
 longLabel Midbrain RNA-seq and ATAC-seq organized by assay source sample and cell type
 type bigWig
 visibility hide
@@ -154,11 +154,21 @@ superTrack on
 shortLabel MTG
 longLabel MTG RNA-seq and ATAC-seq tracks
 
-track mtg_comp
+track mtg_comp1
 parent mtg_super
 compositeTrack on
-shortLabel MTG Tracks
-longLabel MTG RNA-seq and ATAC-seq organized by assay source sample and cell type
+shortLabel MTG RNA
+longLabel MTG RNA-seq organized by assay source sample and cell type
+type bigWig
+visibility hide
+allButtonPair on
+dragAndDrop subTracks
+
+track mtg_comp2
+parent mtg_super
+compositeTrack on
+shortLabel MTG ATAC
+longLabel MTG ATAC-seq organized by assay source sample and cell type
 type bigWig
 visibility hide
 allButtonPair on
@@ -182,7 +192,7 @@ alwaysZero on
 ############################################
 
 track mtg_rna_view
-parent mtg_comp
+parent mtg_comp1
 view RNA
 shortLabel RNA-seq
 longLabel MTG RNA-seq tracks
@@ -192,6 +202,7 @@ viewLimits 0:20
 maxHeightPixels 120:60:20
 aggregate transparentOverlay
 showSubtrackColorOnUi on
+
 
 track mtg_rna_s1
 parent mtg_rna_view
@@ -234,7 +245,7 @@ color 255,100,0
 ############################################
 
 track mtg_atac_view
-parent mtg_comp
+parent mtg_comp2
 view ATAC
 shortLabel ATAC-seq
 longLabel MTG ATAC-seq tracks
