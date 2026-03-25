@@ -7,7 +7,7 @@ superTrack on
 shortLabel Midbrain
 longLabel Midbrain RNA-seq and ATAC-seq tracks
 
-track midbrain_comp
+track midbrain_comp1
 parent midbrain_super
 compositeTrack on
 shortLabel Midbrain RNA Tracks
@@ -45,7 +45,7 @@ alwaysZero on
 ############################################
 
 track midbrain_rna_view
-parent midbrain_comp
+parent midbrain_comp1
 view RNA
 shortLabel RNA-seq
 longLabel Midbrain RNA-seq tracks
@@ -97,7 +97,7 @@ color 255,100,0
 ############################################
 
 track midbrain_atac_view
-parent midbrain_comp
+parent midbrain_comp2
 view ATAC
 shortLabel ATAC-seq
 longLabel Midbrain ATAC-seq tracks
