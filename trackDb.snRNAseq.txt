@@ -11,7 +11,7 @@ type bigWig
 track snRNAseq_midbrain_super
 parent snRNAseq_super
 superTrack on show
-shortLabel Midbrain
+shortLabel Midbrain_RNASeq
 longLabel Midbrain snRNA-seq tracks
 type bigWig
 
@@ -82,7 +82,7 @@ color 255,100,0
 track snRNAseq_mtg_super
 parent snRNAseq_super
 superTrack on show
-shortLabel MTG
+shortLabel MTG_RNASeq
 longLabel MTG snRNA-seq tracks
 type bigWig
 
