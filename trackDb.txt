@@ -7,7 +7,7 @@ superTrack on
 shortLabel Midbrain
 longLabel Midbrain RNA-seq and ATAC-seq tracks
 
-track midbrain_comp1
+track midbrain_comp
 parent midbrain_super
 compositeTrack on
 shortLabel Midbrain RNA Tracks
