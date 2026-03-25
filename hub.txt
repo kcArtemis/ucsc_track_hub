@@ -1,0 +1,5 @@
+hub PD5D_ATAC_RNA_HUB
+shortLabel Brain Multiome Hub
+longLabel UCSC Track Hub for different part of brain (RNA+ATAC-seq) BigWig tracks
+genomesFile genome.txt
+email deep.patel@yale.edu
