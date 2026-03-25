@@ -1,0 +1,5 @@
+track ST_super
+superTrack on hide
+shortLabel ST
+longLabel Spatial transcriptomics tracks
+type bigWig
