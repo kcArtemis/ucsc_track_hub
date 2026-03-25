@@ -11,7 +11,7 @@ type bigWig
 track scATACseq_midbrain_super
 parent scATACseq_super
 superTrack on show
-shortLabel Midbrain
+shortLabel Midbrain_ATACSeq
 longLabel Midbrain scATAC-seq tracks
 type bigWig
 
@@ -82,7 +82,7 @@ color 200,0,200
 track scATACseq_mtg_super
 parent scATACseq_super
 superTrack on show
-shortLabel MTG
+shortLabel MTG_ATACSeq
 longLabel MTG scATAC-seq tracks
 type bigWig
 
