@@ -7,7 +7,17 @@ superTrack on
 shortLabel Midbrain
 longLabel Midbrain RNA-seq and ATAC-seq tracks
 
-track midbrain_comp
+track midbrain_comp1
+parent midbrain_super
+compositeTrack on
+shortLabel Midbrain Tracks
+longLabel Midbrain RNA-seq and ATAC-seq organized by assay source sample and cell type
+type bigWig
+visibility hide
+allButtonPair on
+dragAndDrop subTracks
+
+track midbrain_comp2
 parent midbrain_super
 compositeTrack on
 shortLabel Midbrain Tracks
