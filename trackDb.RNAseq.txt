@@ -51,9 +51,6 @@ shortLabel CD8TCells_PW(-)
 longLabel RNA-seq (MIDBRAIN CD8TCells_PW NEGATIVE)
 color 255,0,0
 negateValues on
-viewLimits -10:0
-viewLimitsMax -50:0
-autoScale off
 type bigWig
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549d6d8b649d7f2ca/display?to_ext=bigwig
 priority 2
