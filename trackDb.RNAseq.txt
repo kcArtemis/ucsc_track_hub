@@ -1,0 +1,147 @@
+track RNAseq_super
+superTrack on show
+shortLabel RNA-seq
+longLabel RNA-seq tracks
+type bigWig
+
+############################################
+# MIDBRAIN
+############################################
+
+track RNAseq_midbrain_super
+parent RNAseq_super
+superTrack on show
+shortLabel Midbrain
+longLabel Midbrain RNA-seq tracks
+type bigWig
+
+track RNAseq_midbrain_samples
+parent RNAseq_midbrain_super
+container multiWig
+shortLabel Samples
+longLabel Midbrain RNA-seq sample bigWig tracks
+type bigWig
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+visibility full
+autoScale on
+alwaysZero on
+maxHeightPixels 120:60:20
+viewLimits 0:20
+
+track midbrain_rna_s1
+parent RNAseq_midbrain_samples
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135e5f30c8b6e5a4e15/display?to_ext=bigwig
+shortLabel MB S1
+longLabel Midbrain RNA-seq Sample 1
+type bigWig
+color 0,0,255
+
+track midbrain_rna_s2
+parent RNAseq_midbrain_samples
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135e5f30c8b6e5a4e15/display?to_ext=bigwig
+shortLabel MB S2
+longLabel Midbrain RNA-seq Sample 2
+type bigWig
+color 0,100,255
+
+track RNAseq_midbrain_celltypes
+parent RNAseq_midbrain_super
+container multiWig
+shortLabel Celltypes
+longLabel Midbrain RNA-seq celltype bigWig tracks
+type bigWig
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+visibility full
+autoScale on
+alwaysZero on
+maxHeightPixels 120:60:20
+viewLimits 0:20
+
+track midbrain_rna_astro
+parent RNAseq_midbrain_celltypes
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357b466dd2ecc1c6ff/display?to_ext=bigwig
+shortLabel MB Astro
+longLabel Midbrain RNA-seq Astrocyte
+type bigWig
+color 255,0,0
+
+track midbrain_rna_neuron
+parent RNAseq_midbrain_celltypes
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357b466dd2ecc1c6ff/display?to_ext=bigwig
+shortLabel MB Neuron
+longLabel Midbrain RNA-seq Neuron
+type bigWig
+color 255,100,0
+
+############################################
+# MTG
+############################################
+
+track RNAseq_mtg_super
+parent RNAseq_super
+superTrack on show
+shortLabel MTG
+longLabel MTG RNA-seq tracks
+type bigWig
+
+track RNAseq_mtg_samples
+parent RNAseq_mtg_super
+container multiWig
+shortLabel Samples
+longLabel MTG RNA-seq sample bigWig tracks
+type bigWig
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+visibility full
+autoScale on
+alwaysZero on
+maxHeightPixels 120:60:20
+viewLimits 0:20
+
+track mtg_rna_s1
+parent RNAseq_mtg_samples
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+shortLabel MTG S1
+longLabel MTG RNA-seq Sample 1
+type bigWig
+color 0,0,255
+
+track mtg_rna_s2
+parent RNAseq_mtg_samples
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+shortLabel MTG S2
+longLabel MTG RNA-seq Sample 2
+type bigWig
+color 0,100,255
+
+track RNAseq_mtg_celltypes
+parent RNAseq_mtg_super
+container multiWig
+shortLabel Celltypes
+longLabel MTG RNA-seq celltype bigWig tracks
+type bigWig
+aggregate transparentOverlay
+showSubtrackColorOnUi on
+visibility full
+autoScale on
+alwaysZero on
+maxHeightPixels 120:60:20
+viewLimits 0:20
+
+track mtg_rna_astro
+parent RNAseq_mtg_celltypes
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+shortLabel MTG Astro
+longLabel MTG RNA-seq Astrocyte
+type bigWig
+color 255,0,0
+
+track mtg_rna_neuron
+parent RNAseq_mtg_celltypes
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+shortLabel MTG Neuron
+longLabel MTG RNA-seq Neuron
+type bigWig
+color 255,100,0
