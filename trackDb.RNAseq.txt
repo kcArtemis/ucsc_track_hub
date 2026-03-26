@@ -2,11 +2,13 @@ track RNAseq_super
 superTrack on show
 shortLabel RNA
 longLabel RNA-seq tracks
+priority 1
+superTrack on show
 
 track RNAseq_midbrain
 parent RNAseq_super
 superTrack on show
-shortLabel RNA_seq
+shortLabel MidBrain
 longLabel Midbrain RNA-seq tracks
 
 track RNAseq_midbrain_samples
