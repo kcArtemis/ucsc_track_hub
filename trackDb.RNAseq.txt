@@ -36,6 +36,15 @@ priority 1.1
 # CD8TCells
 ################################################
 
+track midbrain_CD8TCells_PW_plus
+parent midbrain_rna
+shortLabel CD8TCells_PW(+)
+longLabel RNA-seq (MIDBRAIN CD8TCells_PW POSITIVE)
+color 255,100,0
+type bigWig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721355206225b37a8e0a6/display?to_ext=bigwig
+priority 1
+
 track midbrain_CD8TCells_PW_minus
 parent midbrain_rna
 shortLabel CD8TCells_PW(-)
@@ -45,15 +54,6 @@ negateValues on
 type bigWig
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549d6d8b649d7f2ca/display?to_ext=bigwig
 priority 2
-
-track midbrain_CD8TCells_PW_plus
-parent midbrain_rna
-shortLabel CD8TCells_PW(+)
-longLabel RNA-seq (MIDBRAIN CD8TCells_PW POSITIVE)
-color 255,100,0
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721355206225b37a8e0a6/display?to_ext=bigwig
-priority 1
 
 track midbrain_CD8TCells_APC_minus
 parent midbrain_rna
