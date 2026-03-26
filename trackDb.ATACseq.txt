@@ -1,136 +1,31 @@
-track ATACseq_super
-superTrack on show
-shortLabel ATAC
+track ATACseq
+shortLabel ATAC-seq
 longLabel ATAC-seq tracks
-
-track ATACseq_midbrain
-parent ATACseq_super
+type bigWig
+visibility full
+priority 2
 superTrack on show
-shortLabel Midbrain
-longLabel Midbrain ATAC-seq tracks
 
-track ATACseq_midbrain_samples
-parent ATACseq_midbrain
+track ATAC_MTG
 container multiWig
-shortLabel Samples
-longLabel Midbrain ATAC-seq sample bigWig tracks
+parent ATACseq
+shortLabel MTG combined
 type bigWig
-aggregate transparentOverlay
-showSubtrackColorOnUi on
-visibility full
-autoScale on
-alwaysZero on
-maxHeightPixels 120:60:20
-viewLimits 0:20
 
-track midbrain_atac_s1
-parent ATACseq_midbrain_samples
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
-shortLabel MB S1
-longLabel Midbrain ATAC-seq Sample 1
-type bigWig
-color 0,150,0
-
-track midbrain_atac_s2
-parent ATACseq_midbrain_samples
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
-shortLabel MB S2
-longLabel Midbrain ATAC-seq Sample 2
-type bigWig
-color 0,200,100
-
-track ATACseq_midbrain_celltypes
-parent ATACseq_midbrain
-container multiWig
-shortLabel Celltypes
-longLabel Midbrain ATAC-seq celltype bigWig tracks
-type bigWig
-aggregate transparentOverlay
-showSubtrackColorOnUi on
-visibility full
-autoScale on
-alwaysZero on
-maxHeightPixels 120:60:20
-viewLimits 0:20
-
-track midbrain_atac_astro
-parent ATACseq_midbrain_celltypes
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
-shortLabel MB Astro
-longLabel Midbrain ATAC-seq Astrocyte
+track MTG_ATAC_astro
+parent ATAC_MTG
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
 type bigWig
 color 150,0,150
 
-track midbrain_atac_neuron
-parent ATACseq_midbrain_celltypes
+track ATAC_MIDBRAIN
+container multiWig
+parent ATACseq
+shortLabel Midbrain combined
+type bigWig
+
+track MIDBRAIN_ATAC_astro
+parent ATAC_MIDBRAIN
 bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
-shortLabel MB Neuron
-longLabel Midbrain ATAC-seq Neuron
-type bigWig
-color 200,0,200
-
-track ATACseq_mtg
-parent ATACseq_super
-superTrack on show
-shortLabel MTG
-longLabel MTG ATAC-seq tracks
-
-track ATACseq_mtg_samples
-parent ATACseq_mtg
-container multiWig
-shortLabel Samples
-longLabel MTG ATAC-seq sample bigWig tracks
-type bigWig
-aggregate transparentOverlay
-showSubtrackColorOnUi on
-visibility full
-autoScale on
-alwaysZero on
-maxHeightPixels 120:60:20
-viewLimits 0:20
-
-track mtg_atac_s1
-parent ATACseq_mtg_samples
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
-shortLabel MTG S1
-longLabel MTG ATAC-seq Sample 1
-type bigWig
-color 0,150,0
-
-track mtg_atac_s2
-parent ATACseq_mtg_samples
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
-shortLabel MTG S2
-longLabel MTG ATAC-seq Sample 2
-type bigWig
-color 0,200,100
-
-track ATACseq_mtg_celltypes
-parent ATACseq_mtg
-container multiWig
-shortLabel Celltypes
-longLabel MTG ATAC-seq celltype bigWig tracks
-type bigWig
-aggregate transparentOverlay
-showSubtrackColorOnUi on
-visibility full
-autoScale on
-alwaysZero on
-maxHeightPixels 120:60:20
-viewLimits 0:20
-
-track mtg_atac_astro
-parent ATACseq_mtg_celltypes
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
-shortLabel MTG Astro
-longLabel MTG ATAC-seq Astrocyte
 type bigWig
 color 150,0,150
-
-track mtg_atac_neuron
-parent ATACseq_mtg_celltypes
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
-shortLabel MTG Neuron
-longLabel MTG ATAC-seq Neuron
-type bigWig
-color 200,0,200
