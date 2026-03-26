@@ -2,12 +2,11 @@ track RNAseq_super
 superTrack on show
 shortLabel RNA
 longLabel RNA-seq tracks
+visibility full
 priority 1
-superTrack on show
 
 track RNAseq_midbrain
 parent RNAseq_super
-superTrack on show
 shortLabel MidBrain
 longLabel Midbrain RNA-seq tracks
 
@@ -73,7 +72,6 @@ color 255,100,0
 
 track RNAseq_mtg
 parent RNAseq_super
-superTrack on show
 shortLabel MTG
 longLabel MTG RNA-seq tracks
 
