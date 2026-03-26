@@ -22,7 +22,7 @@ type bigWig 0 1000
 viewLimits 0:10
 maxHeightPixels 100:60:5
 viewLimitsMax 0:30
-visibility full
+visibility off
 autoScale on
 alwaysZero on
 yLineOnOff on
@@ -55,9 +55,9 @@ priority 2
 # COMBINED TRACKS: MIDBRAIN
 ############################################
 
-track merged_by_trimmedmean_MIDBRAIN_ATAC
+track midbrain_atac
 shortLabel combined_track_MIDBRAIN
-longLabel ATAC-seq combined tracks for MIDBRAIN cell types
+longLabel ATAC-seq combined tracks for MIDBRAIN
 container multiWig
 aggregate none
 showSubtrackColorOnUi on
@@ -74,25 +74,247 @@ windowingFunction maximum
 parent ATACseq_PD
 priority 2.2
 
-track MIDBRAIN_Astro_trimmedmean_atac
-parent merged_by_trimmedmean_MIDBRAIN_ATAC
-shortLabel Astro trimmedmean atac
-longLabel ATAC-seq normalized signal (MIDBRAIN Astro)
-color 150,0,150
+################################################
+# Astrocytes
+################################################
+
+track midbrain_Astrocytes_APC
+parent midbrain_atac
+shortLabel Astrocytes_APC
+longLabel ATAC-seq (MIDBRAIN Astrocytes_APC)
+color 0,0,255
 type bigWig
 bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
-yLineMark 0
 priority 1
 
-track MIDBRAIN_Neuron_trimmedmean_atac
-parent merged_by_trimmedmean_MIDBRAIN_ATAC
-shortLabel Neuron trimmedmean atac
-longLabel ATAC-seq normalized signal (MIDBRAIN Neuron)
-color 200,0,200
+track midbrain_Astrocytes_PW
+parent midbrain_atac
+shortLabel Astrocytes_PW
+longLabel ATAC-seq (MIDBRAIN Astrocytes_PW)
+color 255,0,0
 type bigWig
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
-yLineMark 0
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135a1eada1468b7b182/display?to_ext=bigwig
 priority 2
+
+################################################
+# CD8TCells
+################################################
+
+track midbrain_CD8TCells_APC
+parent midbrain_atac
+shortLabel CD8TCells_APC
+longLabel ATAC-seq (MIDBRAIN CD8TCells_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721357ef777842d074274/display?to_ext=bigwig
+priority 3
+
+track midbrain_CD8TCells_PW
+parent midbrain_atac
+shortLabel CD8TCells_PW
+longLabel ATAC-seq (MIDBRAIN CD8TCells_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135f321d2f68f4906c4/display?to_ext=bigwig
+priority 4
+
+################################################
+# DAneurons
+################################################
+
+track midbrain_DAneurons_APC
+parent midbrain_atac
+shortLabel DAneurons_APC
+longLabel ATAC-seq (MIDBRAIN DAneurons_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135d4f992e864217687/display?to_ext=bigwig
+priority 5
+
+track midbrain_DAneurons_PW
+parent midbrain_atac
+shortLabel DAneurons_PW
+longLabel ATAC-seq (MIDBRAIN DAneurons_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213563267bc2cd3a1a3c/display?to_ext=bigwig
+priority 6
+
+################################################
+# Endothelialcell
+################################################
+
+track midbrain_Endothelialcell_APC
+parent midbrain_atac
+shortLabel Endothelialcell_APC
+longLabel ATAC-seq (MIDBRAIN Endothelialcell_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721355540efef6cf734e2/display?to_ext=bigwig
+priority 7
+
+track midbrain_Endothelialcell_PW
+parent midbrain_atac
+shortLabel Endothelialcell_PW
+longLabel ATAC-seq (MIDBRAIN Endothelialcell_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721352a9b1880ec5b8cf9/display?to_ext=bigwig
+priority 8
+
+################################################
+# GABAneurons
+################################################
+
+track midbrain_GABAneurons_APC
+parent midbrain_atac
+shortLabel GABAneurons_APC
+longLabel ATAC-seq (MIDBRAIN GABAneurons_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213501a5eee438323644/display?to_ext=bigwig
+priority 9
+
+track midbrain_GABAneurons_PW
+parent midbrain_atac
+shortLabel GABAneurons_PW
+longLabel ATAC-seq (MIDBRAIN GABAneurons_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
+priority 10
+
+################################################
+# Gluneurons
+################################################
+
+track midbrain_Gluneurons_APC
+parent midbrain_atac
+shortLabel Gluneurons_APC
+longLabel ATAC-seq (MIDBRAIN Gluneurons_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135aec5cf4289939625/display?to_ext=bigwig
+priority 11
+
+track midbrain_Gluneurons_PW
+parent midbrain_atac
+shortLabel Gluneurons_PW
+longLabel ATAC-seq (MIDBRAIN Gluneurons_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135b0c2a79d7624707e/display?to_ext=bigwig
+priority 12
+
+################################################
+# Microglia
+################################################
+
+track midbrain_Microglia_APC
+parent midbrain_atac
+shortLabel Microglia_APC
+longLabel ATAC-seq (MIDBRAIN Microglia_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721350a17a9c6162e1b69/display?to_ext=bigwig
+priority 13
+
+track midbrain_Microglia_PW
+parent midbrain_atac
+shortLabel Microglia_PW
+longLabel ATAC-seq (MIDBRAIN Microglia_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135444f4ee58a070bdb/display?to_ext=bigwig
+priority 14
+
+################################################
+# Monocytes
+################################################
+
+track midbrain_Monocytes_APC
+parent midbrain_atac
+shortLabel Monocytes_APC
+longLabel ATAC-seq (MIDBRAIN Monocytes_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721356dd9e60489684d9e/display?to_ext=bigwig
+priority 15
+
+track midbrain_Monocytes_PW
+parent midbrain_atac
+shortLabel Monocytes_PW
+longLabel ATAC-seq (MIDBRAIN Monocytes_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135ace02d530317cb8f/display?to_ext=bigwig
+priority 16
+
+################################################
+# Oligodendrocytes
+################################################
+
+track midbrain_Oligodendrocytes_APC
+parent midbrain_atac
+shortLabel Oligodendrocytes_APC
+longLabel ATAC-seq (MIDBRAIN Oligodendrocytes_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fba1dd988e66dc23/display?to_ext=bigwig
+priority 17
+
+track midbrain_Oligodendrocytes_PW
+parent midbrain_atac
+shortLabel Oligodendrocytes_PW
+longLabel ATAC-seq (MIDBRAIN Oligodendrocytes_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721354110bfec0ef50870/display?to_ext=bigwig
+priority 18
+
+################################################
+# OPCs
+################################################
+
+track midbrain_OPCs_APC
+parent midbrain_atac
+shortLabel OPCs_APC
+longLabel ATAC-seq (MIDBRAIN OPCs_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721358798568260f18e48/display?to_ext=bigwig
+priority 19
+
+track midbrain_OPCs_PW
+parent midbrain_atac
+shortLabel OPCs_PW
+longLabel ATAC-seq (MIDBRAIN OPCs_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135b9decfe26fc44047/display?to_ext=bigwig
+priority 20
+
+################################################
+# Pericytes
+################################################
+
+track midbrain_Pericytes_APC
+parent midbrain_atac
+shortLabel Pericytes_APC
+longLabel ATAC-seq (MIDBRAIN Pericytes_APC)
+color 0,0,255
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135f6dd279d94f13300/display?to_ext=bigwig
+priority 21
+
+track midbrain_Pericytes_PW
+parent midbrain_atac
+shortLabel Pericytes_PW
+longLabel ATAC-seq (MIDBRAIN Pericytes_PW)
+color 255,0,0
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213599721f764ab1c3fa/display?to_ext=bigwig
+priority 22
 
 ############################################
 # INDIVIDUAL SAMPLE TRACKS
@@ -101,7 +323,7 @@ priority 2
 track ATACseq_PD_individual
 shortLabel individual_track
 longLabel ATAC-seq tracks for all samples
-visibility full
+visibility off
 boxedCfg on
 priority 4
 compositeTrack on
