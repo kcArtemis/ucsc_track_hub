@@ -1,22 +1,16 @@
 track RNAseq_super
 superTrack on show
-shortLabel RNA-seq
+shortLabel RNA
 longLabel RNA-seq tracks
-type bigWig
 
-############################################
-# MIDBRAIN
-############################################
-
-track RNAseq_midbrain_super
+track RNAseq_midbrain
 parent RNAseq_super
 superTrack on show
 shortLabel Midbrain
 longLabel Midbrain RNA-seq tracks
-type bigWig
 
 track RNAseq_midbrain_samples
-parent RNAseq_midbrain_super
+parent RNAseq_midbrain
 container multiWig
 shortLabel Samples
 longLabel Midbrain RNA-seq sample bigWig tracks
@@ -46,7 +40,7 @@ type bigWig
 color 0,100,255
 
 track RNAseq_midbrain_celltypes
-parent RNAseq_midbrain_super
+parent RNAseq_midbrain
 container multiWig
 shortLabel Celltypes
 longLabel Midbrain RNA-seq celltype bigWig tracks
@@ -75,19 +69,14 @@ longLabel Midbrain RNA-seq Neuron
 type bigWig
 color 255,100,0
 
-############################################
-# MTG
-############################################
-
-track RNAseq_mtg_super
+track RNAseq_mtg
 parent RNAseq_super
 superTrack on show
 shortLabel MTG
 longLabel MTG RNA-seq tracks
-type bigWig
 
 track RNAseq_mtg_samples
-parent RNAseq_mtg_super
+parent RNAseq_mtg
 container multiWig
 shortLabel Samples
 longLabel MTG RNA-seq sample bigWig tracks
@@ -117,7 +106,7 @@ type bigWig
 color 0,100,255
 
 track RNAseq_mtg_celltypes
-parent RNAseq_mtg_super
+parent RNAseq_mtg
 container multiWig
 shortLabel Celltypes
 longLabel MTG RNA-seq celltype bigWig tracks
