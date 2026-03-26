@@ -22,7 +22,7 @@ type bigWig 0 1000
 viewLimits 0:10
 maxHeightPixels 100:60:5
 viewLimitsMax 0:30
-visibility off
+visibility hide
 autoScale on
 alwaysZero on
 yLineOnOff on
@@ -323,7 +323,7 @@ priority 22
 track ATACseq_PD_individual
 shortLabel individual_track
 longLabel ATAC-seq tracks for all samples
-visibility off
+visibility hide
 boxedCfg on
 priority 4
 compositeTrack on
