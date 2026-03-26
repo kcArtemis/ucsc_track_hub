@@ -12,6 +12,26 @@ superTrack on show
 # COMBINED TRACKS: MIDBRAIN
 ############################################
 
+track midbrain_rna
+shortLabel combined_track_MIDBRAIN
+longLabel RNA-seq combined tracks for MIDBRAIN
+container multiWig
+aggregate none
+showSubtrackColorOnUi on
+type bigWig 0 1000
+viewLimits 0:10
+maxHeightPixels 100:60:5
+viewLimitsMax 0:30
+visibility full
+autoScale on
+alwaysZero on
+yLineOnOff on
+transformFunc LOG
+windowingFunction maximum
+parent RNAseq_PD
+priority 1.1
+
+
 ################################################
 # CD8TCells
 ################################################
