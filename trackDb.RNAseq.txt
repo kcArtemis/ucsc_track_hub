@@ -439,7 +439,7 @@ priority 40
 track RNAseq_PD_individual
 shortLabel individual_track
 longLabel RNA-seq tracks for all samples
-visibility hide    ###### CHANGE THIS FOR FUTURE
+visibility hide    
 boxedCfg on
 priority 3
 compositeTrack on
