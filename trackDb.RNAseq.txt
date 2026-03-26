@@ -1,77 +1,165 @@
-track RNAseq
+track RNAseq_PD
 shortLabel RNA-seq
 longLabel RNA-seq tracks
-type bigWig
+dataVersion Version 1
+type bed 3
 visibility full
+boxedCfg on
 priority 1
 superTrack on show
 
 ############################################
-# MTG COMBINED
+# COMBINED TRACKS: MTG
 ############################################
 
-track RNAseq_MTG
-shortLabel MTG combined
-longLabel RNA-seq combined tracks for MTG
+track merged_by_trimmedmean_MTG_RNA
+shortLabel combined_track_MTG
+longLabel RNA-seq combined tracks for MTG cell types
 container multiWig
 aggregate none
 showSubtrackColorOnUi on
-type bigWig
+type bigWig 0 1000
 viewLimits 0:10
 maxHeightPixels 100:60:5
+viewLimitsMax 0:30
 visibility full
 autoScale on
 alwaysZero on
-parent RNAseq
+yLineOnOff on
+transformFunc LOG
+windowingFunction maximum
+parent RNAseq_PD
 priority 1.1
 
-track MTG_astro
-parent RNAseq_MTG
-type bigWig
-shortLabel Astro
-longLabel MTG Astro
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+track MTG_Astro_trimmedmean_uniq
+parent merged_by_trimmedmean_MTG_RNA
+shortLabel Astro trimmedmean uniq rpm
+longLabel RNA-seq uniq normalized signal (MTG Astro)
 color 255,0,0
-
-track MTG_neuron
-parent RNAseq_MTG
 type bigWig
-shortLabel Neuron
-longLabel MTG Neuron
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+yLineMark 0
+priority 1
+
+track MTG_Neuron_trimmedmean_uniq
+parent merged_by_trimmedmean_MTG_RNA
+shortLabel Neuron trimmedmean uniq rpm
+longLabel RNA-seq uniq normalized signal (MTG Neuron)
 color 255,100,0
+type bigWig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+yLineMark 0
+priority 2
 
 ############################################
-# MIDBRAIN COMBINED
+# COMBINED TRACKS: MIDBRAIN
 ############################################
 
-track RNAseq_MIDBRAIN
-shortLabel Midbrain combined
-longLabel RNA-seq combined tracks for Midbrain
+track merged_by_trimmedmean_MIDBRAIN_RNA
+shortLabel combined_track_MIDBRAIN
+longLabel RNA-seq combined tracks for MIDBRAIN cell types
 container multiWig
 aggregate none
 showSubtrackColorOnUi on
-type bigWig
+type bigWig 0 1000
 viewLimits 0:10
 maxHeightPixels 100:60:5
+viewLimitsMax 0:30
 visibility full
 autoScale on
 alwaysZero on
-parent RNAseq
+yLineOnOff on
+transformFunc LOG
+windowingFunction maximum
+parent RNAseq_PD
 priority 1.2
 
-track MIDBRAIN_astro
-parent RNAseq_MIDBRAIN
-type bigWig
-shortLabel Astro
-longLabel Midbrain Astro
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357b466dd2ecc1c6ff/display?to_ext=bigwig
+track MIDBRAIN_Astro_trimmedmean_uniq
+parent merged_by_trimmedmean_MIDBRAIN_RNA
+shortLabel Astro trimmedmean uniq rpm
+longLabel RNA-seq uniq normalized signal (MIDBRAIN Astro)
 color 255,0,0
-
-track MIDBRAIN_neuron
-parent RNAseq_MIDBRAIN
 type bigWig
-shortLabel Neuron
-longLabel Midbrain Neuron
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357b466dd2ecc1c6ff/display?to_ext=bigwig
+yLineMark 0
+priority 1
+
+track MIDBRAIN_Neuron_trimmedmean_uniq
+parent merged_by_trimmedmean_MIDBRAIN_RNA
+shortLabel Neuron trimmedmean uniq rpm
+longLabel RNA-seq uniq normalized signal (MIDBRAIN Neuron)
 color 255,100,0
+type bigWig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357b466dd2ecc1c6ff/display?to_ext=bigwig
+yLineMark 0
+priority 2
+
+############################################
+# INDIVIDUAL SAMPLE TRACKS
+############################################
+
+track RNAseq_PD_individual
+shortLabel individual_track
+longLabel RNA-seq tracks for all samples
+visibility full
+boxedCfg on
+priority 3
+compositeTrack on
+dragAndDrop subTracks
+parent RNAseq_PD
+subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
+subGroup2 source Source Sample=Sample
+subGroup3 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MTG_S1=MTG_S1 MTG_S2=MTG_S2
+subGroup4 view Views rpmSignal=RPM_Signal
+dimensions dimX=region dimY=sample dimA=view
+sortOrder region=+ sample=+ view=+
+
+    track RNAseqRPMsignal
+    shortLabel Normalized Signal
+    view rpmSignal
+    visibility full
+    autoScale on
+    viewLimits 0:10
+    viewLimitsMax 0:30
+    yLineOnOff on
+    yLineMark 0
+    alwaysZero on
+    windowingFunction maximum
+    maxHeightPixels 50:15:5
+    parent RNAseq_PD_individual
+
+        track midbrain_rna_s1_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135e5f30c8b6e5a4e15/display?to_ext=bigwig
+        type bigWig
+        shortLabel MB.S1.rpm
+        longLabel RNA-seq normalized signal (Midbrain Sample 1)
+        color 0,0,255
+        subGroups view=rpmSignal region=MIDBRAIN source=Sample sample=MB_S1
+        parent RNAseqRPMsignal
+
+        track midbrain_rna_s2_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135e5f30c8b6e5a4e15/display?to_ext=bigwig
+        type bigWig
+        shortLabel MB.S2.rpm
+        longLabel RNA-seq normalized signal (Midbrain Sample 2)
+        color 0,100,255
+        subGroups view=rpmSignal region=MIDBRAIN source=Sample sample=MB_S2
+        parent RNAseqRPMsignal
+
+        track mtg_rna_s1_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+        type bigWig
+        shortLabel MTG.S1.rpm
+        longLabel RNA-seq normalized signal (MTG Sample 1)
+        color 0,0,255
+        subGroups view=rpmSignal region=MTG source=Sample sample=MTG_S1
+        parent RNAseqRPMsignal
+
+        track mtg_rna_s2_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+        type bigWig
+        shortLabel MTG.S2.rpm
+        longLabel RNA-seq normalized signal (MTG Sample 2)
+        color 0,100,255
+        subGroups view=rpmSignal region=MTG source=Sample sample=MTG_S2
+        parent RNAseqRPMsignal
