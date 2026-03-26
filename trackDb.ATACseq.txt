@@ -1,22 +1,16 @@
 track ATACseq_super
 superTrack on show
-shortLabel ATAC-seq
+shortLabel ATAC
 longLabel ATAC-seq tracks
-type bigWig
 
-############################################
-# MIDBRAIN
-############################################
-
-track ATACseq_midbrain_super
+track ATACseq_midbrain
 parent ATACseq_super
 superTrack on show
 shortLabel Midbrain
 longLabel Midbrain ATAC-seq tracks
-type bigWig
 
 track ATACseq_midbrain_samples
-parent ATACseq_midbrain_super
+parent ATACseq_midbrain
 container multiWig
 shortLabel Samples
 longLabel Midbrain ATAC-seq sample bigWig tracks
@@ -46,7 +40,7 @@ type bigWig
 color 0,200,100
 
 track ATACseq_midbrain_celltypes
-parent ATACseq_midbrain_super
+parent ATACseq_midbrain
 container multiWig
 shortLabel Celltypes
 longLabel Midbrain ATAC-seq celltype bigWig tracks
@@ -75,19 +69,14 @@ longLabel Midbrain ATAC-seq Neuron
 type bigWig
 color 200,0,200
 
-############################################
-# MTG
-############################################
-
-track ATACseq_mtg_super
+track ATACseq_mtg
 parent ATACseq_super
 superTrack on show
 shortLabel MTG
 longLabel MTG ATAC-seq tracks
-type bigWig
 
 track ATACseq_mtg_samples
-parent ATACseq_mtg_super
+parent ATACseq_mtg
 container multiWig
 shortLabel Samples
 longLabel MTG ATAC-seq sample bigWig tracks
@@ -117,7 +106,7 @@ type bigWig
 color 0,200,100
 
 track ATACseq_mtg_celltypes
-parent ATACseq_mtg_super
+parent ATACseq_mtg
 container multiWig
 shortLabel Celltypes
 longLabel MTG ATAC-seq celltype bigWig tracks
