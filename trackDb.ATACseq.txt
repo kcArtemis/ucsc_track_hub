@@ -1,31 +1,165 @@
-track ATACseq
+track ATACseq_PD
 shortLabel ATAC-seq
 longLabel ATAC-seq tracks
-type bigWig
+dataVersion Version 1
+type bed 3
 visibility full
+boxedCfg on
 priority 2
 superTrack on show
 
-track ATAC_MTG
-container multiWig
-parent ATACseq
-shortLabel MTG combined
-type bigWig
+############################################
+# COMBINED TRACKS: MTG
+############################################
 
-track MTG_ATAC_astro
-parent ATAC_MTG
+track merged_by_trimmedmean_MTG_ATAC
+shortLabel combined_track_MTG
+longLabel ATAC-seq combined tracks for MTG cell types
+container multiWig
+aggregate none
+showSubtrackColorOnUi on
+type bigWig 0 1000
+viewLimits 0:10
+maxHeightPixels 100:60:5
+viewLimitsMax 0:30
+visibility full
+autoScale on
+alwaysZero on
+yLineOnOff on
+transformFunc LOG
+windowingFunction maximum
+parent ATACseq_PD
+priority 2.1
+
+track MTG_Astro_trimmedmean_atac
+parent merged_by_trimmedmean_MTG_ATAC
+shortLabel Astro trimmedmean atac
+longLabel ATAC-seq normalized signal (MTG Astro)
+color 150,0,150
+type bigWig
 bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
-type bigWig
-color 150,0,150
+yLineMark 0
+priority 1
 
-track ATAC_MIDBRAIN
+track MTG_Neuron_trimmedmean_atac
+parent merged_by_trimmedmean_MTG_ATAC
+shortLabel Neuron trimmedmean atac
+longLabel ATAC-seq normalized signal (MTG Neuron)
+color 200,0,200
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
+yLineMark 0
+priority 2
+
+############################################
+# COMBINED TRACKS: MIDBRAIN
+############################################
+
+track merged_by_trimmedmean_MIDBRAIN_ATAC
+shortLabel combined_track_MIDBRAIN
+longLabel ATAC-seq combined tracks for MIDBRAIN cell types
 container multiWig
-parent ATACseq
-shortLabel Midbrain combined
-type bigWig
+aggregate none
+showSubtrackColorOnUi on
+type bigWig 0 1000
+viewLimits 0:10
+maxHeightPixels 100:60:5
+viewLimitsMax 0:30
+visibility full
+autoScale on
+alwaysZero on
+yLineOnOff on
+transformFunc LOG
+windowingFunction maximum
+parent ATACseq_PD
+priority 2.2
 
-track MIDBRAIN_ATAC_astro
-parent ATAC_MIDBRAIN
-bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
-type bigWig
+track MIDBRAIN_Astro_trimmedmean_atac
+parent merged_by_trimmedmean_MIDBRAIN_ATAC
+shortLabel Astro trimmedmean atac
+longLabel ATAC-seq normalized signal (MIDBRAIN Astro)
 color 150,0,150
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
+yLineMark 0
+priority 1
+
+track MIDBRAIN_Neuron_trimmedmean_atac
+parent merged_by_trimmedmean_MIDBRAIN_ATAC
+shortLabel Neuron trimmedmean atac
+longLabel ATAC-seq normalized signal (MIDBRAIN Neuron)
+color 200,0,200
+type bigWig
+bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
+yLineMark 0
+priority 2
+
+############################################
+# INDIVIDUAL SAMPLE TRACKS
+############################################
+
+track ATACseq_PD_individual
+shortLabel individual_track
+longLabel ATAC-seq tracks for all samples
+visibility full
+boxedCfg on
+priority 4
+compositeTrack on
+dragAndDrop subTracks
+parent ATACseq_PD
+subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
+subGroup2 source Source Sample=Sample
+subGroup3 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MTG_S1=MTG_S1 MTG_S2=MTG_S2
+subGroup4 view Views signal=Signal
+dimensions dimX=region dimY=sample dimA=view
+sortOrder region=+ sample=+ view=+
+
+    track ATACseqSignal
+    shortLabel Signal
+    view signal
+    visibility full
+    autoScale on
+    viewLimits 0:10
+    viewLimitsMax 0:30
+    yLineOnOff on
+    yLineMark 0
+    alwaysZero on
+    windowingFunction maximum
+    maxHeightPixels 50:15:5
+    parent ATACseq_PD_individual
+
+        track midbrain_atac_s1_signal
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
+        type bigWig
+        shortLabel MB.S1
+        longLabel ATAC-seq signal (Midbrain Sample 1)
+        color 0,150,0
+        subGroups view=signal region=MIDBRAIN source=Sample sample=MB_S1
+        parent ATACseqSignal
+
+        track midbrain_atac_s2_signal
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
+        type bigWig
+        shortLabel MB.S2
+        longLabel ATAC-seq signal (Midbrain Sample 2)
+        color 0,200,100
+        subGroups view=signal region=MIDBRAIN source=Sample sample=MB_S2
+        parent ATACseqSignal
+
+        track mtg_atac_s1_signal
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
+        type bigWig
+        shortLabel MTG.S1
+        longLabel ATAC-seq signal (MTG Sample 1)
+        color 0,150,0
+        subGroups view=signal region=MTG source=Sample sample=MTG_S1
+        parent ATACseqSignal
+
+        track mtg_atac_s2_signal
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
+        type bigWig
+        shortLabel MTG.S2
+        longLabel ATAC-seq signal (MTG Sample 2)
+        color 0,200,100
+        subGroups view=signal region=MTG source=Sample sample=MTG_S2
+        parent ATACseqSignal
