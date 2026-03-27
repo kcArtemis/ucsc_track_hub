@@ -23,7 +23,7 @@ viewLimits 0:10
 maxHeightPixels 100:60:5
 viewLimitsMax 0:30
 visibility hide
-autoScale on
+autoScale off
 alwaysZero on
 yLineOnOff on
 transformFunc LOG
