@@ -461,7 +461,7 @@ track RNAseq_PD_individual
 shortLabel individual_track
 longLabel RNA-seq tracks for all samples
 compositeTrack on
-type bed 3
+type bigWig
 visibility full
 boxedCfg on
 priority 3
