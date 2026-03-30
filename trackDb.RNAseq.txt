@@ -470,9 +470,9 @@ priority 41
 compositeTrack on
 dragAndDrop subTracks
 parent RNAseq_PD
-subGroup1 condition Condition HC=Health_Control PD=Parkinsons_disease
+subGroup1 condition Condition PD=Parkinsons_disease HC=Health_Control
 subGroup2 source Source Sample=Sample
-subGroup3 sample Sample MB_S1_1=MB_S1_1 MB_S1_2=MB_S1_2
+subGroup3 sample Sample MB_S1_1=MB_S1_1 MB_S1_2=MB_S1_2 MB_S2_1=MB_S2_1 MB_S2_2=MB_S2_2
 subGroup4 view Views signal=Signal
 dimensions dimX=condition dimY=sample dimA=view
 sortOrder condition=+ sample=+ view=+
@@ -507,5 +507,24 @@ sortOrder condition=+ sample=+ view=+
         longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
         color 255,0,0
         subGroups view=signal condition=HC source=Sample sample=MB_S1_2
+        negateValues on
+        parent RNAseqSignal
+
+        track midbrain_rna_s2_plus_rpm
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
+        type bigWig
+        shortLabel MB.S2 +
+        longLabel RNA-seq normalized signal (Midbrain Sample 1, plus strand)
+        color 0,0,255
+        subGroups view=signal condition=PD source=Sample sample=MB_S2_1
+        parent RNAseqSignal
+
+        track midbrain_rna_s2_minus_rpm
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
+        type bigWig
+        shortLabel MB.S2 -
+        longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
+        color 255,0,0
+        subGroups view=signal condition=HC source=Sample sample=MB_S2_2
         negateValues on
         parent RNAseqSignal
