@@ -460,65 +460,111 @@ priority 40
 track RNAseq_PD_individual
 shortLabel individual_track
 longLabel RNA-seq tracks for all samples
-visibility hide    
+visibility full
 boxedCfg on
 priority 3
 compositeTrack on
 dragAndDrop subTracks
 parent RNAseq_PD
+
 subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
-subGroup2 source Source Sample=Sample
-subGroup3 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MTG_S1=MTG_S1 MTG_S2=MTG_S2
+subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MTG_S1=MTG_S1 MTG_S2=MTG_S2
+subGroup3 strand Strand plus=Plus minus=Minus
 subGroup4 view Views rpmSignal=RPM_Signal
-dimensions dimX=region dimY=sample dimA=view
-sortOrder region=+ sample=+ view=+
+
+dimensions dimX=region dimY=sample dimA=strand dimB=view
+sortOrder region=+ sample=+ strand=+ view=+
+filterComposite dimA dimB
+dimensionAchecked plus,minus
+dimensionBchecked rpmSignal
 
     track RNAseqRPMsignal
     shortLabel Normalized Signal
     view rpmSignal
     visibility full
-    autoScale on
-    viewLimits 0:10
-    viewLimitsMax 0:30
+    autoScale off
+    viewLimits -10:10
+    viewLimitsMax -30:30
     yLineOnOff on
     yLineMark 0
     alwaysZero on
     windowingFunction maximum
     maxHeightPixels 50:15:5
+    viewUi on
     parent RNAseq_PD_individual
 
-        track midbrain_rna_s1_rpm
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135e5f30c8b6e5a4e15/display?to_ext=bigwig
+        track midbrain_rna_s1_plus_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
         type bigWig
-        shortLabel MB.S1.rpm
-        longLabel RNA-seq normalized signal (Midbrain Sample 1)
+        shortLabel MB.S1 +
+        longLabel RNA-seq normalized signal (Midbrain Sample 1, plus strand)
         color 0,0,255
-        subGroups view=rpmSignal region=MIDBRAIN source=Sample sample=MB_S1
+        subGroups view=rpmSignal region=MIDBRAIN sample=MB_S1 strand=plus
         parent RNAseqRPMsignal
 
-        track midbrain_rna_s2_rpm
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135e5f30c8b6e5a4e15/display?to_ext=bigwig
+        track midbrain_rna_s1_minus_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
         type bigWig
-        shortLabel MB.S2.rpm
-        longLabel RNA-seq normalized signal (Midbrain Sample 2)
+        shortLabel MB.S1 -
+        longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
+        color 255,0,0
+        subGroups view=rpmSignal region=MIDBRAIN sample=MB_S1 strand=minus
+        parent RNAseqRPMsignal
+        negateValues on
+
+        track midbrain_rna_s2_plus_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+        type bigWig
+        shortLabel MB.S2 +
+        longLabel RNA-seq normalized signal (Midbrain Sample 2, plus strand)
         color 0,100,255
-        subGroups view=rpmSignal region=MIDBRAIN source=Sample sample=MB_S2
+        subGroups view=rpmSignal region=MIDBRAIN sample=MB_S2 strand=plus
         parent RNAseqRPMsignal
 
-        track mtg_rna_s1_rpm
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+        track midbrain_rna_s2_minus_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
         type bigWig
-        shortLabel MTG.S1.rpm
-        longLabel RNA-seq normalized signal (MTG Sample 1)
+        shortLabel MB.S2 -
+        longLabel RNA-seq normalized signal (Midbrain Sample 2, minus strand)
+        color 255,100,100
+        subGroups view=rpmSignal region=MIDBRAIN sample=MB_S2 strand=minus
+        parent RNAseqRPMsignal
+        negateValues on
+
+        track mtg_rna_s1_plus_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+        type bigWig
+        shortLabel MTG.S1 +
+        longLabel RNA-seq normalized signal (MTG Sample 1, plus strand)
         color 0,0,255
-        subGroups view=rpmSignal region=MTG source=Sample sample=MTG_S1
+        subGroups view=rpmSignal region=MTG sample=MTG_S1 strand=plus
         parent RNAseqRPMsignal
 
-        track mtg_rna_s2_rpm
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
+        track mtg_rna_s1_minus_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
         type bigWig
-        shortLabel MTG.S2.rpm
-        longLabel RNA-seq normalized signal (MTG Sample 2)
-        color 0,100,255
-        subGroups view=rpmSignal region=MTG source=Sample sample=MTG_S2
+        shortLabel MTG.S1 -
+        longLabel RNA-seq normalized signal (MTG Sample 1, minus strand)
+        color 255,0,0
+        subGroups view=rpmSignal region=MTG sample=MTG_S1 strand=minus
         parent RNAseqRPMsignal
+        negateValues on
+
+        track mtg_rna_s2_plus_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+        type bigWig
+        shortLabel MTG.S2 +
+        longLabel RNA-seq normalized signal (MTG Sample 2, plus strand)
+        color 0,100,255
+        subGroups view=rpmSignal region=MTG sample=MTG_S2 strand=plus
+        parent RNAseqRPMsignal
+
+        track mtg_rna_s2_minus_rpm
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+        type bigWig
+        shortLabel MTG.S2 -
+        longLabel RNA-seq normalized signal (MTG Sample 2, minus strand)
+        color 255,100,100
+        subGroups view=rpmSignal region=MTG sample=MTG_S2 strand=minus
+        parent RNAseqRPMsignal
+        negateValues on
