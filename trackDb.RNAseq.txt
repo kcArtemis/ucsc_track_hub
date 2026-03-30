@@ -477,7 +477,7 @@ subGroup3 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MB_S3=MB_S3
 subGroup4 strand Strand plus=Plus minus=Minus
 subGroup5 view Views signal=Signal
 
-dimensions dimX=condition dimY=sample dimA=view
+dimensions dimX=condition dimY=sample dimA=view dimB=strand
 sortOrder condition=+ sample=+ strand=+ view=+
 
     track RNAseqSignal
