@@ -477,8 +477,8 @@ subGroup1 condition Condition HC=Health_Control ILB=incidental_Lewy_body_disease
 subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2
 subGroup3 strand Strand plus=Plus minus=Minus
 
-dimensions dimX=sample dimY=strand dimA=condition
-dimensionAchecked HC,ILB,PD
+dimensions dimX=condition dimY=sample dimA=strand
+dimensionAchecked plus,minus
 sortOrder condition=+ sample=+ strand=+
 
 track midbrain_rna_s1_plus_rpm
