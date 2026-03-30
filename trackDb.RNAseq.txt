@@ -474,7 +474,7 @@ priority 3
 dragAndDrop subTracks
 parent RNAseq_PD
 subGroup1 condition Condition HC=Health_Control ILB=incidental_Lewy_body_disease PD=Parkinson's_disease
-subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2
+subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MB_S3=MB_S3
 subGroup3 strand Strand plus=Plus minus=Minus
 
 dimensions dimX=sample dimY=condition dimA=strand
@@ -571,7 +571,7 @@ alwaysZero on
 windowingFunction maximum
 maxHeightPixels 50:15:5
 color 0,100,255
-subGroups condition=ILB sample=MB_S2 strand=plus
+subGroups condition=ILB sample=MB_S3 strand=plus
 
 track midbrain_rna_s3_minus_rpm
 parent RNAseq_PD_individual on
@@ -589,5 +589,5 @@ alwaysZero on
 windowingFunction maximum
 maxHeightPixels 50:15:5
 color 255,100,100
-subGroups condition=ILB sample=MB_S2 strand=minus
+subGroups condition=ILB sample=MB_S strand=minus
 negateValues on
