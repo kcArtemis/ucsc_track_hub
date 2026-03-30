@@ -474,11 +474,10 @@ parent RNAseq_PD
 subGroup1 condition Condition HC=Health_Control ILB=incidental PD=Parkinsons_disease
 subGroup2 source Source Sample=Sample
 subGroup3 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MB_S3=MB_S3
-subGroup4 strand Strand plus=Plus minus=Minus
-subGroup5 view Views signal=Signal
+subGroup4 view Views signal=Signal
 
-dimensions dimX=condition dimY=sample dimA=view dimB=strand
-sortOrder condition=+ sample=+ strand=+ view=+
+dimensions dimX=condition dimY=sample dimA=view
+sortOrder condition=+ sample=+ view=+
 
     track RNAseqSignal
     shortLabel Signal
@@ -500,7 +499,7 @@ sortOrder condition=+ sample=+ strand=+ view=+
         shortLabel MB.S1 +
         longLabel RNA-seq normalized signal (Midbrain Sample 1, plus strand)
         color 0,0,255
-        subGroups view=signal condition=PD source=Sample sample=MB_S1 strand=plus
+        subGroups view=signal condition=PD source=Sample sample=MB_S1
         parent RNAseqSignal
 
         track midbrain_rna_s1_minus_rpm
@@ -509,7 +508,7 @@ sortOrder condition=+ sample=+ strand=+ view=+
         shortLabel MB.S1 -
         longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
         color 255,0,0
-        subGroups view=signal condition=PD source=Sample sample=MB_S1 strand=minus
+        subGroups view=signal condition=PD source=Sample sample=MB_S1
         negateValues on
         parent RNAseqSignal
 
@@ -519,7 +518,7 @@ sortOrder condition=+ sample=+ strand=+ view=+
         shortLabel MB.S2 +
         longLabel RNA-seq normalized signal (Midbrain Sample 2, plus strand)
         color 0,100,255
-        subGroups view=signal condition=HC source=Sample sample=MB_S2 strand=plus
+        subGroups view=signal condition=HC source=Sample sample=MB_S2
         parent RNAseqSignal
 
         track midbrain_rna_s2_minus_rpm
@@ -528,7 +527,7 @@ sortOrder condition=+ sample=+ strand=+ view=+
         shortLabel MB.S2 -
         longLabel RNA-seq normalized signal (Midbrain Sample 2, minus strand)
         color 255,100,100
-        subGroups view=signal condition=HC source=Sample sample=MB_S2 strand=minus
+        subGroups view=signal condition=HC source=Sample sample=MB_S2
         negateValues on
         parent RNAseqSignal
 
@@ -538,7 +537,7 @@ sortOrder condition=+ sample=+ strand=+ view=+
         shortLabel MB.S3 +
         longLabel RNA-seq normalized signal (Midbrain Sample 3, plus strand)
         color 0,150,255
-        subGroups view=signal condition=ILB source=Sample sample=MB_S3 strand=plus
+        subGroups view=signal condition=ILB source=Sample sample=MB_S3
         parent RNAseqSignal
 
         track midbrain_rna_s3_minus_rpm
@@ -547,6 +546,6 @@ sortOrder condition=+ sample=+ strand=+ view=+
         shortLabel MB.S3 -
         longLabel RNA-seq normalized signal (Midbrain Sample 3, minus strand)
         color 255,150,150
-        subGroups view=signal condition=ILB source=Sample sample=MB_S3 strand=minus
+        subGroups view=signal condition=ILB source=Sample sample=MB_S3
         negateValues on
         parent RNAseqSignal
