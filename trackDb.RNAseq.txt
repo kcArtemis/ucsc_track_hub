@@ -506,6 +506,6 @@ sortOrder condition=+ sample=+ view=+
         shortLabel MB.S1 -
         longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
         color 255,0,0
-        subGroups view=signal condition=PD source=Sample sample=MB_S1_2
+        subGroups view=signal condition=HC source=Sample sample=MB_S1_2
         negateValues on
         parent RNAseqSignal
