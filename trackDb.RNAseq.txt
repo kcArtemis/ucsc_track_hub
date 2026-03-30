@@ -463,8 +463,6 @@ priority 40
 ## RNA
 #########
 
-
-
 track RNAseq_PD_individual
 shortLabel individual_track
 longLabel RNA-seq tracks for all samples
@@ -475,64 +473,84 @@ boxedCfg on
 priority 3
 dragAndDrop subTracks
 parent RNAseq_PD
-subGroup1 view View SIG=Signal
-subGroup2 condition Condition HC=Health_Control ILB=incidental_Lewy_body_disease PD=Parkinson's_disease
-subGroup3 sample Sample MB_S1=MB_S1 MB_S2=MB_S2
-subGroup4 strand Strand plus=Plus minus=Minus
+subGroup1 condition Condition HC=Health_Control ILB=incidental_Lewy_body_disease PD=Parkinson's_disease
+subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2
+subGroup3 strand Strand plus=Plus minus=Minus
 
 dimensions dimX=sample dimY=strand dimA=condition
 dimensionAchecked HC,ILB,PD
-sortOrder condition=+ sample=+
+sortOrder condition=+ sample=+ strand=+
 
-    track RNAseqRPMsignal
-    parent RNAseq_PD_individual on
-    view SIG
-    shortLabel Normalized Signal
-    type bigWig
-    visibility full
-    autoScale on
-    viewLimits -10:10
-    viewLimitsMax -30:30
-    yLineOnOff on
-    yLineMark 0
-    alwaysZero on
-    windowingFunction maximum
-    maxHeightPixels 50:15:5
+track midbrain_rna_s1_plus_rpm
+parent RNAseq_PD_individual on
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+type bigWig
+shortLabel MB.S1 +
+longLabel RNA-seq normalized signal (Midbrain Sample 1, plus strand)
+visibility full
+autoScale on
+viewLimits -10:10
+viewLimitsMax -30:30
+yLineOnOff on
+yLineMark 0
+alwaysZero on
+windowingFunction maximum
+maxHeightPixels 50:15:5
+color 0,0,255
+subGroups condition=PD sample=MB_S1 strand=plus
 
-        track midbrain_rna_s1_plus_rpm
-        parent RNAseqRPMsignal
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
-        type bigWig
-        shortLabel MB.S1 +
-        longLabel RNA-seq normalized signal (Midbrain Sample 1, plus strand)
-        color 0,0,255
-        subGroups condition=PD sample=MB_S1 strand=plus view=SIG
+track midbrain_rna_s1_minus_rpm
+parent RNAseq_PD_individual on
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+type bigWig
+shortLabel MB.S1 -
+longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
+visibility full
+autoScale on
+viewLimits -10:10
+viewLimitsMax -30:30
+yLineOnOff on
+yLineMark 0
+alwaysZero on
+windowingFunction maximum
+maxHeightPixels 50:15:5
+color 255,0,0
+subGroups condition=PD sample=MB_S1 strand=minus
+negateValues on
 
-        track midbrain_rna_s1_minus_rpm
-        parent RNAseqRPMsignal
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
-        type bigWig
-        shortLabel MB.S1 -
-        longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
-        color 255,0,0
-        subGroups condition=PD sample=MB_S1 strand=minus view=SIG
-        negateValues on
+track midbrain_rna_s2_plus_rpm
+parent RNAseq_PD_individual on
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+type bigWig
+shortLabel MB.S2 +
+longLabel RNA-seq normalized signal (Midbrain Sample 2, plus strand)
+visibility full
+autoScale on
+viewLimits -10:10
+viewLimitsMax -30:30
+yLineOnOff on
+yLineMark 0
+alwaysZero on
+windowingFunction maximum
+maxHeightPixels 50:15:5
+color 0,100,255
+subGroups condition=HC sample=MB_S2 strand=plus
 
-        track midbrain_rna_s2_plus_rpm
-        parent RNAseqRPMsignal
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
-        type bigWig
-        shortLabel MB.S2 +
-        longLabel RNA-seq normalized signal (Midbrain Sample 2, plus strand)
-        color 0,100,255
-        subGroups condition=HC sample=MB_S2 strand=plus view=SIG
-
-        track midbrain_rna_s2_minus_rpm
-        parent RNAseqRPMsignal
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
-        type bigWig
-        shortLabel MB.S2 -
-        longLabel RNA-seq normalized signal (Midbrain Sample 2, minus strand)
-        color 255,100,100
-        subGroups condition=HC sample=MB_S2 strand=minus view=SIG
-        negateValues on
+track midbrain_rna_s2_minus_rpm
+parent RNAseq_PD_individual on
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+type bigWig
+shortLabel MB.S2 -
+longLabel RNA-seq normalized signal (Midbrain Sample 2, minus strand)
+visibility full
+autoScale on
+viewLimits -10:10
+viewLimitsMax -30:30
+yLineOnOff on
+yLineMark 0
+alwaysZero on
+windowingFunction maximum
+maxHeightPixels 50:15:5
+color 255,100,100
+subGroups condition=HC sample=MB_S2 strand=minus
+negateValues on
