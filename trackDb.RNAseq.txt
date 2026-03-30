@@ -554,3 +554,40 @@ maxHeightPixels 50:15:5
 color 255,100,100
 subGroups condition=HC sample=MB_S2 strand=minus
 negateValues on
+
+track midbrain_rna_s3_plus_rpm
+parent RNAseq_PD_individual on
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+type bigWig
+shortLabel MB.S3 +
+longLabel RNA-seq normalized signal (Midbrain Sample 2, plus strand)
+visibility full
+autoScale on
+viewLimits -10:10
+viewLimitsMax -30:30
+yLineOnOff on
+yLineMark 0
+alwaysZero on
+windowingFunction maximum
+maxHeightPixels 50:15:5
+color 0,100,255
+subGroups condition=ILB sample=MB_S2 strand=plus
+
+track midbrain_rna_s3_minus_rpm
+parent RNAseq_PD_individual on
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
+type bigWig
+shortLabel MB.S3 -
+longLabel RNA-seq normalized signal (Midbrain Sample 2, minus strand)
+visibility full
+autoScale on
+viewLimits -10:10
+viewLimitsMax -30:30
+yLineOnOff on
+yLineMark 0
+alwaysZero on
+windowingFunction maximum
+maxHeightPixels 50:15:5
+color 255,100,100
+subGroups condition=ILB sample=MB_S2 strand=minus
+negateValues on
