@@ -1,4 +1,4 @@
-track RNAseq_PD
+        track RNAseq_PD
 shortLabel PD5D_RNA-seq
 longLabel RNA-seq tracks for PD5D datasets and we cuurently have data for Midbrain
 dataVersion Version 1
@@ -454,13 +454,13 @@ bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/displ
 priority 40
 
 ############################################
-# INDIVIDUAL SAMPLE TRACKS
+# RNA-SEQ INDIVIDUAL SAMPLE TRACKS
 ############################################
 
 track RNAseq_PD_individual
 shortLabel individual_track
 longLabel RNA-seq tracks for all samples
-visibility full
+visibility hide
 boxedCfg on
 priority 3
 compositeTrack on
@@ -472,11 +472,10 @@ subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MTG_S1=MTG_S1 MTG_S2=MTG_S2
 subGroup3 strand Strand plus=Plus minus=Minus
 subGroup4 view Views rpmSignal=RPM_Signal
 
-dimensions dimX=region dimY=sample dimA=strand dimB=view
-sortOrder region=+ sample=+ strand=+ view=+
-filterComposite dimA dimB
+dimensions dimX=region dimY=sample dimA=strand
+filterComposite dimA
 dimensionAchecked plus,minus
-dimensionBchecked rpmSignal
+sortOrder region=+ sample=+ strand=+
 
     track RNAseqRPMsignal
     shortLabel Normalized Signal
