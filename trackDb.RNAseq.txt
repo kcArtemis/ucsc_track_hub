@@ -477,7 +477,7 @@ subGroup1 condition Condition HC=Health_Control ILB=incidental_Lewy_body_disease
 subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2
 subGroup3 strand Strand plus=Plus minus=Minus
 
-dimensions dimX=condition dimY=sample dimA=strand
+dimensions dimX=sample dimY=condition dimA=strand
 dimensionAchecked plus,minus
 sortOrder condition=+ sample=+ strand=+
 
