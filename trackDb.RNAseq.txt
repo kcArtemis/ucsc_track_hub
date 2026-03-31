@@ -10,21 +10,26 @@ compositeTrack on
 allButtonPair on
 dragAndDrop subTracks
 
+# Define the logical groupings
 subGroup1 view Views APC=APC PW=PW
 subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
-subGroup3 strand Strand plus=Plus minus=Minus
-subGroup4 cell CellType CD8T=CD8TCells MONO=Monocytes
+subGroup3 cell CellType CD8T=CD8T MONO=Monocytes
+subGroup4 strand Strand plus=Plus minus=Minus
 
-sortOrder cell=+ region=+ strand=+ view=+
-filterComposite dimA
+# Crucial: dimensions at the parent level tell the browser how to draw the tables
+# dimX=view will create the separate horizontal sections/tables you want
+dimensions dimX=view dimY=cell dimA=region
+sortOrder view=+ cell=+ region=+ strand=+
+filterComposite dimA dimB
 
 #########################################################
-APC VIEW
+# APC VIEW SECTION
 #########################################################
 
 track RNAseq_PD_APC
 parent RNAseq_PD
 view APC
+subGroups view=APC
 shortLabel APC
 longLabel APC normalized RNA-seq
 type bigWig
@@ -39,16 +44,15 @@ viewLimits -10:10
 viewLimitsMax -30:30
 windowingFunction maximum
 transformFunc LOG
-dimensions dimX=cell dimY=region dimA=strand
-
 
 #########################################################
-PW VIEW
+# PW VIEW SECTION
 #########################################################
 
 track RNAseq_PD_PW
 parent RNAseq_PD
 view PW
+subGroups view=PW
 shortLabel PW
 longLabel PW normalized RNA-seq
 type bigWig
@@ -63,21 +67,19 @@ viewLimits -10:10
 viewLimitsMax -30:30
 windowingFunction maximum
 transformFunc LOG
-dimensions dimX=cell dimY=region dimA=strand
 
 #########################################################
-CELL TYPES
+# INDIVIDUAL TRACKS (SUBTRACKS)
 #########################################################
 
-
-### CD8T
+### CD8T - APC
 track midbrain_CD8T_APC_plus
 parent RNAseq_PD_APC
 type bigWig
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
 color 0,100,255
 subGroups view=APC cell=CD8T region=MIDBRAIN strand=plus
-priority 2
+priority 1
 
 track midbrain_CD8T_APC_minus
 parent RNAseq_PD_APC
@@ -86,15 +88,16 @@ bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/displ
 color 0,0,255
 negateValues on
 subGroups view=APC cell=CD8T region=MIDBRAIN strand=minus
-priority 3
+priority 2
 
+### CD8T - PW
 track midbrain_CD8T_PW_plus
 parent RNAseq_PD_PW
 type bigWig
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721355206225b37a8e0a6/display?to_ext=bigwig
 color 0,100,255
 subGroups view=PW cell=CD8T region=MIDBRAIN strand=plus
-priority 4
+priority 3
 
 track midbrain_CD8T_PW_minus
 parent RNAseq_PD_PW
@@ -103,18 +106,16 @@ bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549d6d8b649d7f2ca/displ
 color 0,0,255
 negateValues on
 subGroups view=PW cell=CD8T region=MIDBRAIN strand=minus
-priority 5
+priority 4
 
-
-
-### MONO
+### MONO - APC
 track midbrain_MONO_APC_plus
 parent RNAseq_PD_APC
 type bigWig
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
 color 0,100,255
 subGroups view=APC cell=MONO region=MIDBRAIN strand=plus
-priority 6
+priority 5
 
 track midbrain_MONO_APC_minus
 parent RNAseq_PD_APC
@@ -123,15 +124,16 @@ bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/displ
 color 0,0,255
 negateValues on
 subGroups view=APC cell=MONO region=MIDBRAIN strand=minus
-priority 7
+priority 6
 
+### MONO - PW
 track midbrain_MONO_PW_plus
 parent RNAseq_PD_PW
 type bigWig
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721355206225b37a8e0a6/display?to_ext=bigwig
 color 0,100,255
 subGroups view=PW cell=MONO region=MIDBRAIN strand=plus
-priority 8
+priority 7
 
 track midbrain_MONO_PW_minus
 parent RNAseq_PD_PW
@@ -140,4 +142,4 @@ bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549d6d8b649d7f2ca/displ
 color 0,0,255
 negateValues on
 subGroups view=PW cell=MONO region=MIDBRAIN strand=minus
-priority 9
+priority 8
