@@ -9,9 +9,10 @@ allButtonPair on
 dragAndDrop subTracks
 boxedCfg on
 
-subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
-subGroup2 cell CellType CD8T=CD8T MONO=Monocytes
-subGroup3 view Views APC=APC
+subGroup1 view Views APC=APC
+subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
+subGroup3 cell CellType CD8T=CD8T MONO=Monocytes
+
 dimensions dimX=cell dimY=region dimA=view
 sortOrder view=+ region=+ cell=+ 
 
