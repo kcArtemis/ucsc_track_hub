@@ -98,7 +98,8 @@ subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup2 source Source Sample=Sample
 subGroup3 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MTG_S1=MTG_S1 MTG_S2=MTG_S2
 subGroup4 view Views signal=Signal
-dimensions dimX=region dimY=sample dimA=view
+subGroup5 name Name N1=Nadan N2=Madan
+dimensions dimX=region dimY=name dimA=view
 sortOrder region=+ sample=+ view=+
 
     track RNAseqSignal
@@ -119,7 +120,7 @@ sortOrder region=+ sample=+ view=+
         longLabel RNA-seq signal (Midbrain Sample 1)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MB_S1_URL/display?to_ext=bigwig
-        subGroups view=signal region=MIDBRAIN source=Sample sample=MB_S1
+        subGroups view=signal region=MIDBRAIN source=Sample sample=MB_S1 name=N1
         color 0,150,0
 
         track midbrain_rnaseq_s2_signal
@@ -128,7 +129,7 @@ sortOrder region=+ sample=+ view=+
         longLabel RNA-seq signal (Midbrain Sample 2)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MB_S2_URL/display?to_ext=bigwig
-        subGroups view=signal region=MIDBRAIN source=Sample sample=MB_S2
+        subGroups view=signal region=MIDBRAIN source=Sample sample=MB_S2 name=N2
         color 0,200,100
 
         track mtg_rnaseq_s1_signal
@@ -137,7 +138,7 @@ sortOrder region=+ sample=+ view=+
         longLabel RNA-seq signal (MTG Sample 1)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MTG_S1_URL/display?to_ext=bigwig
-        subGroups view=signal region=MTG source=Sample sample=MTG_S1
+        subGroups view=signal region=MTG source=Sample sample=MTG_S1 name=N1
         color 0,150,0
 
         track mtg_rnaseq_s2_signal
@@ -146,5 +147,5 @@ sortOrder region=+ sample=+ view=+
         longLabel RNA-seq signal (MTG Sample 2)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MTG_S2_URL/display?to_ext=bigwig
-        subGroups view=signal region=MTG source=Sample sample=MTG_S2
+        subGroups view=signal region=MTG source=Sample sample=MTG_S2 name=N2
         color 0,200,100
