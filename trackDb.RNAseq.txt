@@ -1,5 +1,4 @@
 track RNAseq_PD
-track RNAseq_PD
 shortLabel ASAP PD5D RNA-seq
 longLabel RNA-seq tracks for PD5D dataset from Midbrain and MTG part of the Human Brain 
 dataVersion Version 1
