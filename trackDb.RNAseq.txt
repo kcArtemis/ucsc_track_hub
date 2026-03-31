@@ -31,7 +31,7 @@ dimensions dimX=region dimY=cell dimA=strand
 sortOrder view=+ region=+ cell=+ strand=+ sample=+
 
     track RNAseq_PD_APC
-    parent composite_midbrain
+    parent composite_brainRegion
     view APC
     shortLabel APC
     longLabel APC normalized RNA-seq
