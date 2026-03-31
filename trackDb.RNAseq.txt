@@ -15,69 +15,67 @@ superTrack on show
 track composite_brainRegion
 shortLabel composite_brainRegion
 longLabel RNA-seq composite tracks for cell types from Midbrain and MTG
-compositeTrack on
-priority 4
-allButtonPair on
-viewUi on
-dragAndDrop subTracks
-boxedCfg on
 visibility hide
+boxedCfg on
+priority 4
+compositeTrack on
+dragAndDrop subTracks
 parent RNAseq_PD
 type bigWig
-subGroup1 view Views APC=APC
-subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
+subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
+subGroup2 source Source CellType=CellType
 subGroup3 cell CellType CD8T=CD8T MONO=Monocytes OPC=OPCs PERI=Pericytes
-dimensions dimX=region dimY=cell dimA=view
-sortOrder view=+ region=+ cell=+ 
+subGroup4 view Views APC=APC
+subGroup5 name Name N1=CD8T N2=Monocytes N3=OPCs N4=Pericytes
+dimensions dimX=region dimY=name dimA=view
+sortOrder region=+ name=+ view=+
 
     track RNAseq_PD_APC
-    parent composite_brainRegion
-    view APC
     shortLabel APC
-    longLabel APC normalized RNA-seq
-    subGroups view=APC
-    type bigWig
+    view APC
     visibility full
-    maxHeightPixels 100:60:5
     autoScale on
     alwaysZero on
     windowingFunction maximum
     transformFunc LOG
+    maxHeightPixels 100:60:5
+    parent composite_brainRegion
+    type bigWig
 
-        track midbrain_CD8T_APC_plus
+        track midbrain_CD8T_APC
         parent RNAseq_PD_APC
-        shortLabel CD8T APC +
-        longLabel CD8T APC + data
+        shortLabel CD8T APC
+        longLabel CD8T APC data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-        subGroups view=APC cell=CD8T region=MIDBRAIN
+        subGroups view=APC region=MIDBRAIN source=CellType cell=CD8T name=N1
         color 0,100,255
 
-        track midbrain_MONO_APC_plus
+        track midbrain_MONO_APC
         parent RNAseq_PD_APC
-        shortLabel MONO APC +
-        longLabel MONO APC + data
+        shortLabel MONO APC
+        longLabel MONO APC data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-        subGroups view=APC cell=MONO region=MIDBRAIN
+        subGroups view=APC region=MIDBRAIN source=CellType cell=MONO name=N2
         color 0,100,255
 
-        track mtg_PERI_APC_plus
+        track mtg_OPC_APC
         parent RNAseq_PD_APC
-        shortLabel PERI APC + MTG
-        longLabel PERI APC + data (MTG)
-        type bigWig
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
-        subGroups view=APC cell=PERI region=MTG 
-        color 0,100,255
-
-        track mtg_OPC_APC_plus
-        parent RNAseq_PD_APC
-        shortLabel OPC APC + MTG
-        longLabel OPC APC + data (MTG)
+        shortLabel OPC APC MTG
+        longLabel OPC APC data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-        subGroups view=APC cell=OPC region=MTG 
+        subGroups view=APC region=MTG source=CellType cell=OPC name=N3
+        color 0,100,255
+
+        track mtg_PERI_APC
+        parent RNAseq_PD_APC
+        shortLabel PERI APC MTG
+        longLabel PERI APC data (MTG)
+        type bigWig
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
+        subGroups view=APC region=MTG source=CellType cell=PERI name=N4
         color 0,100,255
 
 ############################################
