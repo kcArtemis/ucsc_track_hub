@@ -12,7 +12,7 @@ subGroup1 view Views APC=APC
 subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup3 cell CellType CD8T=CD8T MONO=Monocytes
 
-dimensions dimX=region dimY=cell 
+dimensions dimX=region dimY=cell dimA=view
 sortOrder view=+ region=+ cell=+ 
 
 track RNAseq_PD_APC
