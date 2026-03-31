@@ -12,7 +12,7 @@ subGroup1 view Views APC=APC
 subGroup2 cell CellType CD8T=CD8T MONO=Monocytes
 subGroup3 region Region MIDBRAIN=Midbrain
 subGroup4 strand Strand plus=Plus minus=Minus
-dimensions dimX=view dimY=cell dimA=strand 
+dimensions dimX=cell dimY=region dimA=strand 
 sortOrder view=+ cell=+ region=+ strand=+
 
 #########################################################
