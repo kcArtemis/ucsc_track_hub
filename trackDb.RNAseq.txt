@@ -9,9 +9,10 @@ allButtonPair on
 dragAndDrop subTracks
 boxedCfg on
 subGroup1 view Views APC=APC
-subGroup2 region Region MIDBRAIN=Midbrain
+subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup3 cell CellType CD8T=CD8T MONO=Monocytes
-dimensions dimX=region dimY=cell dimA=view
+
+dimensions dimX=region dimY=cell 
 sortOrder view=+ region=+ cell=+ 
 
 track RNAseq_PD_APC
@@ -44,6 +45,6 @@ transformFunc LOG
   longLabel MONO APC + data 
   type bigWig
   bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-  subGroups view=APC cell=MONO region=MIDBRAIN 
+  subGroups view=APC cell=MONO region=MTG 
   color 0,100,255
 
