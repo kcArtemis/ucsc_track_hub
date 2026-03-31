@@ -19,6 +19,7 @@ parent RNAseq_PD
 view APC
 shortLabel APC
 longLabel APC normalized RNA-seq
+subGroups view=APC
 type bigWig
 visibility full
 viewUi on
