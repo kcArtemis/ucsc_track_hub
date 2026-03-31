@@ -15,54 +15,50 @@ subGroup4 strand Strand plus=Plus minus=Minus
 dimensions dimX=cell dimY=region dimA=strand 
 sortOrder view=+ cell=+ region=+ strand=+
 
-#########################################################
-# APC VIEW
-#########################################################
-
-track RNAseq_PD_APC
-parent RNAseq_PD
-view APC
-shortLabel APC
-longLabel APC normalized RNA-seq
-type bigWig
-visibility full
-viewUi on
-maxHeightPixels 100:60:5
-autoScale on
-alwaysZero on
-windowingFunction maximum
-transformFunc LOG
-
-  track midbrain_CD8T_APC_plus
-  parent RNAseq_PD_APC
-  shortLabel CD8T APC +
+  track RNAseq_PD_APC
+  parent RNAseq_PD
+  view APC
+  shortLabel APC
+  longLabel APC normalized RNA-seq
   type bigWig
-  bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-  subGroups view=APC cell=CD8T region=MIDBRAIN strand=plus
-  color 0,100,255
+  visibility full
+  viewUi on
+  maxHeightPixels 100:60:5
+  autoScale on
+  alwaysZero on
+  windowingFunction maximum
+  transformFunc LOG
 
-  track midbrain_CD8T_APC_minus
-  parent RNAseq_PD_APC
-  shortLabel CD8T APC -
-  type bigWig
-  bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/display?to_ext=bigwig
-  subGroups view=APC cell=CD8T region=MIDBRAIN strand=minus
-  color 0,0,255
-  negateValues on
+    track midbrain_CD8T_APC_plus
+    parent RNAseq_PD_APC
+    shortLabel CD8T APC +
+    type bigWig
+    bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
+    subGroups view=APC cell=CD8T region=MIDBRAIN strand=plus
+    color 0,100,255
 
-  track midbrain_MONO_APC_plus
-  parent RNAseq_PD_APC
-  shortLabel MONO APC +
-  type bigWig
-  bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-  subGroups view=APC cell=MONO region=MTG strand=plus
-  color 0,100,255
+    track midbrain_CD8T_APC_minus
+    parent RNAseq_PD_APC
+    shortLabel CD8T APC -
+    type bigWig
+    bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/display?to_ext=bigwig
+    subGroups view=APC cell=CD8T region=MIDBRAIN strand=minus
+    color 0,0,255
+    negateValues on
 
-  track midbrain_MONO_APC_minus
-  parent RNAseq_PD_APC
-  shortLabel MONO APC -
-  type bigWig
-  bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fb3db6bbe3c8f75f/display?to_ext=bigwig
-  subGroups view=APC cell=MONO region=MTG strand=minus
-  color 0,0,255
-  negateValues on
+    track midbrain_MONO_APC_plus
+    parent RNAseq_PD_APC
+    shortLabel MONO APC +
+    type bigWig
+    bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
+    subGroups view=APC cell=MONO region=MTG strand=plus
+    color 0,100,255
+
+    track midbrain_MONO_APC_minus
+    parent RNAseq_PD_APC
+    shortLabel MONO APC -
+    type bigWig
+    bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fb3db6bbe3c8f75f/display?to_ext=bigwig
+    subGroups view=APC cell=MONO region=MTG strand=minus
+    color 0,0,255
+    negateValues on
