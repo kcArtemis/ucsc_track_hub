@@ -25,12 +25,10 @@ parent RNAseq_PD
 type bigWig
 subGroup1 view Views APC=APC
 subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
-subGroup3 cell CellType CD8T=CD8T MONO=Monocytes OPC=OPCs PERI=Pericytes 
-subGroup4 sample Sample S1=S1 S2=S2 S3=S3 S4=S4 S5=S5 S6=S6 S7=S7 S8=S8
-subGroup5 strand Strand plus=Plus minus=Minus
-dimensions dimX=region dimY=cell dimA=view dimB=strand dimC=sample
-filterComposite dimB dimC
-sortOrder view=+ region=+ cell=+ strand=+ sample=+
+subGroup3 cell CellType CD8T=CD8T MONO=Monocytes OPC=OPCs PERI=Pericytes
+subGroup4 strand Strand plus=Plus minus=Minus
+dimensions dimX=region dimY=cell dimA=view dimB=strand
+sortOrder view=+ region=+ cell=+ strand=+
 
     track RNAseq_PD_APC
     parent composite_brainRegion
@@ -53,7 +51,7 @@ sortOrder view=+ region=+ cell=+ strand=+ sample=+
         longLabel CD8T APC + data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-        subGroups view=APC cell=CD8T region=MIDBRAIN sample=S1 strand=plus
+        subGroups view=APC cell=CD8T region=MIDBRAIN strand=plus
         color 0,100,255
 
         track midbrain_MONO_APC_plus
@@ -62,7 +60,7 @@ sortOrder view=+ region=+ cell=+ strand=+ sample=+
         longLabel MONO APC + data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-        subGroups view=APC cell=MONO region=MIDBRAIN sample=S2 strand=plus
+        subGroups view=APC cell=MONO region=MIDBRAIN strand=plus
         color 0,100,255
 
         track mtg_PERI_APC_plus
@@ -71,7 +69,7 @@ sortOrder view=+ region=+ cell=+ strand=+ sample=+
         longLabel PERI APC + data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
-        subGroups view=APC cell=PERI region=MTG sample=S3 strand=plus
+        subGroups view=APC cell=PERI region=MTG strand=plus
         color 0,100,255
 
         track mtg_OPC_APC_plus
@@ -80,7 +78,7 @@ sortOrder view=+ region=+ cell=+ strand=+ sample=+
         longLabel OPC APC + data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-        subGroups view=APC cell=OPC region=MTG sample=S4 strand=plus
+        subGroups view=APC cell=OPC region=MTG strand=plus
         color 0,100,255
 
         track midbrain_CD8T_APC_minus
@@ -89,35 +87,36 @@ sortOrder view=+ region=+ cell=+ strand=+ sample=+
         longLabel CD8T APC - data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-        subGroups view=APC cell=CD8T region=MIDBRAIN sample=S5 strand=minus
+        subGroups view=APC cell=CD8T region=MIDBRAIN strand=minus
         color 0,100,255
 
         track midbrain_MONO_APC_minus
         parent RNAseq_PD_APC
-        shortLabel MONO APC +
-        longLabel MONO APC + data
+        shortLabel MONO APC -
+        longLabel MONO APC - data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-        subGroups view=APC cell=MONO region=MIDBRAIN sample=S6 strand=minus
+        subGroups view=APC cell=MONO region=MIDBRAIN strand=minus
         color 0,100,255
 
         track mtg_PERI_APC_minus
         parent RNAseq_PD_APC
-        shortLabel PERI APC + MTG
-        longLabel PERI APC + data (MTG)
+        shortLabel PERI APC - MTG
+        longLabel PERI APC - data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
-        subGroups view=APC cell=PERI region=MTG sample=S7 strand=minus
+        subGroups view=APC cell=PERI region=MTG strand=minus
         color 0,100,255
 
         track mtg_OPC_APC_minus
         parent RNAseq_PD_APC
-        shortLabel OPC APC + MTG
-        longLabel OPC APC + data (MTG)
+        shortLabel OPC APC - MTG
+        longLabel OPC APC - data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-        subGroups view=APC cell=OPC region=MTG sample=S8 strand=minus
+        subGroups view=APC cell=OPC region=MTG strand=minus
         color 0,100,255
+
 ############################################
 # INDIVIDUAL SAMPLE TRACKS
 ############################################
