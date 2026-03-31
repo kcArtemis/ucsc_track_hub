@@ -8,11 +8,12 @@ compositeTrack on
 allButtonPair on
 dragAndDrop subTracks
 boxedCfg on
-subGroup1 view Views APC=APC
+
+subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup2 cell CellType CD8T=CD8T MONO=Monocytes
-subGroup3 region Region MIDBRAIN=Midbrain MTG=MTG
+subGroup3 view Views APC=APC
 dimensions dimX=cell dimY=region dimA=view
-sortOrder view=+ cell=+ region=+
+sortOrder region=+ cell=+ view=+
 
   track RNAseq_PD_APC
   parent RNAseq_PD
@@ -31,6 +32,7 @@ sortOrder view=+ cell=+ region=+
     track midbrain_CD8T_APC_plus
     parent RNAseq_PD_APC
     shortLabel CD8T APC +
+    longLabel CD8T APC + data 
     type bigWig
     bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
     subGroups view=APC cell=CD8T region=MIDBRAIN 
@@ -39,6 +41,7 @@ sortOrder view=+ cell=+ region=+
     track midbrain_MONO_APC_plus
     parent RNAseq_PD_APC
     shortLabel MONO APC +
+    longLabel MONO APC + data 
     type bigWig
     bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
     subGroups view=APC cell=MONO region=MTG 
