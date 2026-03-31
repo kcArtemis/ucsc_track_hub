@@ -10,7 +10,7 @@ dragAndDrop subTracks
 boxedCfg on
 subGroup1 view Views APC=APC
 subGroup2 cell CellType CD8T=CD8T MONO=Monocytes
-subGroup3 region Region MIDBRAIN=Midbrain
+subGroup3 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup4 strand Strand plus=Plus minus=Minus
 dimensions dimX=cell dimY=region dimA=strand 
 sortOrder view=+ cell=+ region=+ strand=+
@@ -53,7 +53,7 @@ transformFunc LOG
 
   track midbrain_MONO_APC_plus
   parent RNAseq_PD_APC
-  subGroups view=APC cell=MONO region=MIDBRAIN strand=plus
+  subGroups view=APC cell=MONO region=MTG strand=plus
   shortLabel MONO APC +
   type bigWig
   bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
@@ -61,7 +61,7 @@ transformFunc LOG
 
   track midbrain_MONO_APC_minus
   parent RNAseq_PD_APC
-  subGroups view=APC cell=MONO region=MIDBRAIN strand=minus
+  subGroups view=APC cell=MONO region=MTG strand=minus
   shortLabel MONO APC -
   type bigWig
   bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fb3db6bbe3c8f75f/display?to_ext=bigwig
