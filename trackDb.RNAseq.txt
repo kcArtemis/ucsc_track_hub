@@ -1,530 +1,142 @@
 track RNAseq_PD
-shortLabel PD5D_RNA-seq
-longLabel RNA-seq tracks for PD5D datasets and we cuurently have data for Midbrain
+shortLabel ASAP PD5D RNA-seq
+longLabel RNA-seq tracks for PD5D dataset from Midbrain and MTG part of the Human Brain 
 dataVersion Version 1
-type bed 3
+type bigWig
 visibility full
 boxedCfg on
 priority 1
-superTrack on show
+compositeTrack on
+allButtonPair on
+dragAndDrop subTracks
 
-############################################
-# COMBINED TRACKS: MIDBRAIN
-############################################
+subGroup1 view Views APC=APC PW=PW
+subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
+subGroup3 strand Strand plus=Plus minus=Minus
+subGroup4 cell CellType CD8T=CD8TCells MONO=Monocytes
 
-track midbrain_rna
-shortLabel combined_track_MIDBRAIN
-longLabel RNA-seq combined tracks for MIDBRAIN
-container multiWig
-aggregate none
-showSubtrackColorOnUi on
-type bigWig 0 1000
-viewLimits 0:10
-maxHeightPixels 100:60:5
-viewLimitsMax 0:30
+dimensions dimX=cell dimY=region dimA=strand
+sortOrder cell=+ region=+ strand=+ view=+
+filterComposite dimA
+
+#########################################################
+APC VIEW
+#########################################################
+
+track RNAseq_PD_APC
+parent RNAseq_PD
+view APC
+shortLabel APC
+longLabel APC normalized RNA-seq
+type bigWig
 visibility full
+viewUi on
+maxHeightPixels 100:60:5
 autoScale on
 alwaysZero on
 yLineOnOff on
-transformFunc LOG
+yLineMark 0
+viewLimits -10:10
+viewLimitsMax -30:30
 windowingFunction maximum
+transformFunc LOG
+
+
+#########################################################
+PW VIEW
+#########################################################
+
+track RNAseq_PD_PW
 parent RNAseq_PD
-priority 1.1
-
-
-################################################
-# CD8TCells
-################################################
-
-track midbrain_CD8TCells_PW_plus
-parent midbrain_rna
-shortLabel CD8TCells_PW(+)
-longLabel RNA-seq (MIDBRAIN CD8TCells_PW POSITIVE)
-color 255,100,0
+view PW
+shortLabel PW
+longLabel PW normalized RNA-seq
 type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721355206225b37a8e0a6/display?to_ext=bigwig
-priority 1
+visibility full
+viewUi on
+maxHeightPixels 100:60:5
+autoScale on
+alwaysZero on
+yLineOnOff on
+yLineMark 0
+viewLimits -10:10
+viewLimitsMax -30:30
+windowingFunction maximum
+transformFunc LOG
 
-track midbrain_CD8TCells_PW_minus
-parent midbrain_rna
-shortLabel CD8TCells_PW(-)
-longLabel RNA-seq (MIDBRAIN CD8TCells_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549d6d8b649d7f2ca/display?to_ext=bigwig
-priority 2
+#########################################################
+CELL TYPES
+#########################################################
 
-track midbrain_CD8TCells_APC_plus
-parent midbrain_rna
-shortLabel CD8TCells_APC(+)
-longLabel RNA-seq (MIDBRAIN CD8TCells_APC POSITIVE)
-color 0,100,255
+
+### CD8T
+track midbrain_CD8T_APC_plus
+parent RNAseq_PD_APC
 type bigWig
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-priority 3
+color 0,100,255
+subGroups view=APC cell=CD8T region=MIDBRAIN strand=plus
+priority 2
 
-track midbrain_CD8TCells_APC_minus
-parent midbrain_rna
-shortLabel CD8TCells_APC(-)
-longLabel RNA-seq (MIDBRAIN CD8TCells_APC NEGATIVE)
-color 0,0,255
-negateValues on
+track midbrain_CD8T_APC_minus
+parent RNAseq_PD_APC
 type bigWig
 bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/display?to_ext=bigwig
+color 0,0,255
+negateValues on
+subGroups view=APC cell=CD8T region=MIDBRAIN strand=minus
+priority 3
+
+track midbrain_CD8T_PW_plus
+parent RNAseq_PD_PW
+type bigWig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721355206225b37a8e0a6/display?to_ext=bigwig
+color 0,100,255
+subGroups view=PW cell=CD8T region=MIDBRAIN strand=plus
 priority 4
 
-################################################
-# Monocytes
-################################################
-
-track midbrain_Monocytes_PW_plus
-parent midbrain_rna
-shortLabel Monocytes_PW(+)
-longLabel RNA-seq (MIDBRAIN Monocytes_PW POSITIVE)
-color 255,100,0
+track midbrain_CD8T_PW_minus
+parent RNAseq_PD_PW
 type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549e7cd0145517016/display?to_ext=bigwig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549d6d8b649d7f2ca/display?to_ext=bigwig
+color 0,0,255
+negateValues on
+subGroups view=PW cell=CD8T region=MIDBRAIN strand=minus
 priority 5
 
-track midbrain_Monocytes_PW_minus
-parent midbrain_rna
-shortLabel Monocytes_PW(-)
-longLabel RNA-seq (MIDBRAIN Monocytes_PW NEGATIVE)
-negateValues on
-color 255,0,0
+
+
+### MONO
+track midbrain_MONO_APC_plus
+parent RNAseq_PD_APC
 type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135a738740a760b3a97/display?to_ext=bigwig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
+color 0,100,255
+subGroups view=APC cell=MONO region=MIDBRAIN strand=plus
 priority 6
 
-track midbrain_Monocytes_APC_plus
-parent midbrain_rna
-shortLabel Monocytes_APC(+)
-longLabel RNA-seq (MIDBRAIN Monocytes_APC POSITIVE)
-color 0,100,255
+track midbrain_MONO_APC_minus
+parent RNAseq_PD_APC
 type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/display?to_ext=bigwig
+color 0,0,255
+negateValues on
+subGroups view=APC cell=MONO region=MIDBRAIN strand=minus
 priority 7
 
-track midbrain_Monocytes_APC_minus
-parent midbrain_rna
-shortLabel Monocytes_APC(-)
-longLabel RNA-seq (MIDBRAIN Monocytes_APC NEGATIVE)
-color 0,0,255
-negateValues on
+track midbrain_MONO_PW_plus
+parent RNAseq_PD_PW
 type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fb3db6bbe3c8f75f/display?to_ext=bigwig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721355206225b37a8e0a6/display?to_ext=bigwig
+color 0,100,255
+subGroups view=PW cell=MONO region=MIDBRAIN strand=plus
 priority 8
 
-################################################
-# OPCs
-################################################
-
-track midbrain_OPCs_PW_plus
-parent midbrain_rna
-shortLabel OPCs_PW(+)
-longLabel RNA-seq (MIDBRAIN OPCs_PW POSITIVE)
-color 255,100,0
+track midbrain_MONO_PW_minus
+parent RNAseq_PD_PW
 type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135f7ca4e326386e7a6/display?to_ext=bigwig
+bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549d6d8b649d7f2ca/display?to_ext=bigwig
+color 0,0,255
+negateValues on
+subGroups view=PW cell=MONO region=MIDBRAIN strand=minus
 priority 9
-
-track midbrain_OPCs_PW_minus
-parent midbrain_rna
-shortLabel OPCs_PW(-)
-longLabel RNA-seq (MIDBRAIN OPCs_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357bdfd6866e1c3f27/display?to_ext=bigwig
-priority 10
-
-track midbrain_OPCs_APC_plus
-parent midbrain_rna
-shortLabel OPCs_APC(+)
-longLabel RNA-seq (MIDBRAIN OPCs_APC POSITIVE)
-color 0,100,255
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-priority 11
-
-track midbrain_OPCs_APC_minus
-parent midbrain_rna
-shortLabel OPCs_APC(-)
-longLabel RNA-seq (MIDBRAIN OPCs_APC NEGATIVE)
-color 0,0,255
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135d55297fca444a2b2/display?to_ext=bigwig
-priority 12
-
-
-################################################
-# Endothelialcell
-################################################
-
-track midbrain_Endothelialcell_PW_plus
-parent midbrain_rna
-shortLabel Endothelialcell_PW(+)
-longLabel RNA-seq (MIDBRAIN Endothelialcell_PW POSITIVE)
-color 255,100,0
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135bb7a2443905f0cc6/display?to_ext=bigwig
-priority 13
-
-track midbrain_Endothelialcell_PW_minus
-parent midbrain_rna
-shortLabel Endothelialcell_PW(-)
-longLabel RNA-seq (MIDBRAIN Endothelialcell_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fa868e3dcc480899/display?to_ext=bigwig
-priority 14
-
-track midbrain_Endothelialcell_APC_plus
-parent midbrain_rna
-shortLabel Endothelialcell_APC(+)
-longLabel RNA-seq (MIDBRAIN Endothelialcell_APC POSITIVE)
-color 0,100,255
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fa80d17ebc253235/display?to_ext=bigwig
-priority 15
-
-track midbrain_Endothelialcell_APC_minus
-parent midbrain_rna
-shortLabel Endothelialcell_APC(-)
-longLabel RNA-seq (MIDBRAIN Endothelialcell_APC NEGATIVE)
-color 0,0,255
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357c5a9754fa86fe49/display?to_ext=bigwig
-priority 16
-
-################################################
-# Pericytes
-################################################
-
-track midbrain_Pericytes_PW_plus
-parent midbrain_rna
-shortLabel Pericytes_PW(+)
-longLabel RNA-seq (MIDBRAIN Pericytes_PW POSITIVE)
-color 255,100,0
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
-priority 17
-
-track midbrain_Pericytes_PW_minus
-parent midbrain_rna
-shortLabel Pericytes_PW(-)
-longLabel RNA-seq (MIDBRAIN Pericytes_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721354f60a872274adbe1/display?to_ext=bigwig
-priority 18
-
-track midbrain_Pericytes_APC_plus
-parent midbrain_rna
-shortLabel Pericytes_APC(+)
-longLabel RNA-seq (MIDBRAIN Pericytes_APC POSITIVE)
-color 0,100,255
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fe7dd23075091a2d/display?to_ext=bigwig
-priority 19
-
-track midbrain_Pericytes_APC_minus
-parent midbrain_rna
-shortLabel Pericytes_APC(-)
-longLabel RNA-seq (MIDBRAIN Pericytes_APC NEGATIVE)
-color 0,0,255
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213532c32c5c7d8504d0/display?to_ext=bigwig
-priority 20
-
-################################################
-# GABAneurons
-################################################
-
-track midbrain_GABAneurons_PW_plus
-parent midbrain_rna
-shortLabel GABAneurons_PW(+)
-longLabel RNA-seq (MIDBRAIN GABAneurons_PW POSITIVE)
-color 255,100,0
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721352c77ecea3b2663cc/display?to_ext=bigwig
-priority 21
-
-track midbrain_GABAneurons_PW_minus
-parent midbrain_rna
-shortLabel GABAneurons_PW(-)
-longLabel RNA-seq (MIDBRAIN GABAneurons_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721358701d34b6a557b29/display?to_ext=bigwig
-priority 22
-
-track midbrain_GABAneurons_APC_plus
-parent midbrain_rna
-shortLabel GABAneurons_APC(+)
-longLabel RNA-seq (MIDBRAIN GABAneurons_APC POSITIVE)
-color 0,100,255
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
-priority 23
-
-track midbrain_GABAneurons_APC_minus
-parent midbrain_rna
-shortLabel GABAneurons_APC(-)
-longLabel RNA-seq (MIDBRAIN GABAneurons_APC NEGATIVE)
-color 0,0,255
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213587a6ba0fc18398aa/display?to_ext=bigwig
-priority 24
-
-################################################
-# Astrocytes
-################################################
-track midbrain_Astrocytes_PW_plus
-parent midbrain_rna
-shortLabel Astrocytes_PW(+)
-longLabel RNA-seq (MIDBRAIN Astrocytes_PW POSITIVE)
-color 255,100,0
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135e5f30c8b6e5a4e15/display?to_ext=bigwig
-priority 25
-
-track midbrain_Astrocytes_PW_minus
-parent midbrain_rna
-shortLabel Astrocytes_PW(-)
-longLabel RNA-seq (MIDBRAIN Astrocytes_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135ea455ac3027da576/display?to_ext=bigwig
-priority 26
-
-track midbrain_Astrocytes_APC_plus
-parent midbrain_rna
-shortLabel Astrocytes_APC(+)
-longLabel RNA-seq (MIDBRAIN Astrocytes_APC POSITIVE)
-color 0,100,255
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357b466dd2ecc1c6ff/display?to_ext=bigwig
-priority 27
-
-track midbrain_Astrocytes_APC_minus
-parent midbrain_rna
-shortLabel Astrocytes_APC(-)
-longLabel RNA-seq (MIDBRAIN Astrocytes_APC NEGATIVE)
-color 0,0,255
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540ac72631581338f/display?to_ext=bigwig
-priority 28
-
-
-################################################
-# Gluneurons
-################################################
-track midbrain_Gluneurons_PW_plus
-parent midbrain_rna
-shortLabel Gluneurons_PW(+)
-longLabel RNA-seq (MIDBRAIN Gluneurons_PW POSITIVE)
-color 255,100,0
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213564eec7dfa98cae0e/display?to_ext=bigwig
-priority 29
-
-track midbrain_Gluneurons_PW_minus
-parent midbrain_rna
-shortLabel Gluneurons_PW(-)
-longLabel RNA-seq (MIDBRAIN Gluneurons_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135a15c450fa8ae18b3/display?to_ext=bigwig
-priority 30
-
-track midbrain_Gluneurons_APC_plus
-parent midbrain_rna
-shortLabel Gluneurons_APC(+)
-longLabel RNA-seq (MIDBRAIN Gluneurons_APC POSITIVE)
-color 0,100,255
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135acb74d35d8a956ff/display?to_ext=bigwig
-priority 31
-
-track midbrain_Gluneurons_APC_minus
-parent midbrain_rna
-shortLabel Gluneurons_APC(-)
-longLabel RNA-seq (MIDBRAIN Gluneurons_APC NEGATIVE)
-color 0,0,255
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721359b7626e9fc98b319/display?to_ext=bigwig
-priority 32
-
-################################################
-# Oligodendrocytes
-################################################
-
-track midbrain_Oligodendrocytes_PW_plus
-parent midbrain_rna
-shortLabel Oligodendrocytes_PW(+)
-longLabel RNA-seq (MIDBRAIN Oligodendrocytes_PW POSITIVE)
-color 255,100,0
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135dff61178d479a2bd/display?to_ext=bigwig
-priority 33
-
-track midbrain_Oligodendrocytes_PW_minus
-parent midbrain_rna
-shortLabel Oligodendrocytes_PW(-)
-longLabel RNA-seq (MIDBRAIN Oligodendrocytes_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135614da76de49fe6d3/display?to_ext=bigwig
-priority 34
-
-track midbrain_Oligodendrocytes_APC_plus
-parent midbrain_rna
-shortLabel Oligodendrocytes_APC(+)
-longLabel RNA-seq (MIDBRAIN Oligodendrocytes_APC POSITIVE)
-color 0,100,255
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213598f5cbd5ffe65375/display?to_ext=bigwig
-priority 35
-
-
-track midbrain_Oligodendrocytes_APC_minus
-parent midbrain_rna
-shortLabel Oligodendrocytes_APC(-)
-longLabel RNA-seq (MIDBRAIN Oligodendrocytes_APC NEGATIVE)
-color 0,0,255
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fd2f73fbf43d6879/display?to_ext=bigwig
-priority 36
-
-################################################
-# Microglia
-################################################
-
-track midbrain_Microglia_PW_plus
-parent midbrain_rna
-shortLabel Microglia_PW(+)
-longLabel RNA-seq (MIDBRAIN Microglia_PW POSITIVE)
-color 255,100,0
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721354f2d625734662d4d/display?to_ext=bigwig
-priority 37
-
-track midbrain_Microglia_PW_minus
-parent midbrain_rna
-shortLabel Microglia_PW(-)
-longLabel RNA-seq (MIDBRAIN Microglia_PW NEGATIVE)
-color 255,0,0
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135df6556005f621ea2/display?to_ext=bigwig
-priority 38
-
-track midbrain_Microglia_APC_plus
-parent midbrain_rna
-shortLabel Microglia_APC(+)
-longLabel RNA-seq (MIDBRAIN Microglia_APC POSITIVE)
-color 0,100,255
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135afb0bb06cb6c7a7e/display?to_ext=bigwig
-priority 39
-
-track midbrain_Microglia_APC_minus
-parent midbrain_rna
-shortLabel Microglia_APC(-)
-longLabel RNA-seq (MIDBRAIN Microglia_APC NEGATIVE)
-color 0,0,255
-negateValues on
-type bigWig
-bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
-priority 40
-
-
-
-
-#######################
-### Individual Data
-#######################
-
-
-track RNAseq_PD_individual
-shortLabel individual_track
-longLabel RNA-seq tracks for all samples
-visibility hide
-boxedCfg on
-priority 41
-compositeTrack on
-dragAndDrop subTracks
-parent RNAseq_PD
-subGroup1 condition Condition PD=Parkinsons_disease HC=Health_Control
-subGroup2 source Source Sample=Sample
-subGroup3 sample Sample MB_S1_1=MB_S1_1 MB_S1_2=MB_S1_2 MB_S2_1=MB_S2_1 MB_S2_2=MB_S2_2
-subGroup4 view Views signal=Signal
-dimensions dimX=condition dimY=sample dimA=view
-sortOrder condition=+ sample=+ view=+
-
-    track RNAseqSignal
-    shortLabel Signal
-    view signal
-    visibility full
-    autoScale on
-    viewLimits -10:10
-    viewLimitsMax -30:30
-    yLineOnOff on
-    yLineMark 0
-    alwaysZero on
-    windowingFunction maximum
-    maxHeightPixels 50:15:5
-    parent RNAseq_PD_individual
-
-        track midbrain_rna_s1_plus_rpm
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
-        type bigWig
-        shortLabel MB.S1 +
-        longLabel RNA-seq normalized signal (Midbrain Sample 1, plus strand)
-        color 0,0,255
-        subGroups view=signal condition=PD source=Sample sample=MB_S1_1
-        parent RNAseqSignal
-
-        track midbrain_rna_s1_minus_rpm
-        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213533fd9b7315cb82f1/display?to_ext=bigwig
-        type bigWig
-        shortLabel MB.S1 -
-        longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
-        color 255,0,0
-        subGroups view=signal condition=HC source=Sample sample=MB_S1_2
-        negateValues on
-        parent RNAseqSignal
-
-        track midbrain_rna_s2_plus_rpm
-        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
-        type bigWig
-        shortLabel MB.S2 +
-        longLabel RNA-seq normalized signal (Midbrain Sample 1, plus strand)
-        color 0,0,255
-        subGroups view=signal condition=PD source=Sample sample=MB_S2_1
-        parent RNAseqSignal
-
-        track midbrain_rna_s2_minus_rpm
-        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fad1ada4848ec9fc/display?to_ext=bigwig
-        type bigWig
-        shortLabel MB.S2 -
-        longLabel RNA-seq normalized signal (Midbrain Sample 1, minus strand)
-        color 255,0,0
-        subGroups view=signal condition=HC source=Sample sample=MB_S2_2
-        negateValues on
-        parent RNAseqSignal
