@@ -18,6 +18,7 @@ longLabel RNA-seq composite tracks for cell types from Midbrain and MTG
 compositeTrack on
 priority 4
 allButtonPair on
+viewUi on
 dragAndDrop subTracks
 boxedCfg on
 visibility hide
@@ -37,7 +38,6 @@ sortOrder view=+ region=+ cell=+
     subGroups view=APC
     type bigWig
     visibility full
-    viewUi on
     maxHeightPixels 100:60:5
     autoScale on
     alwaysZero on
