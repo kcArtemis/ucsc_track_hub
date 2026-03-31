@@ -15,7 +15,6 @@ subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup3 strand Strand plus=Plus minus=Minus
 subGroup4 cell CellType CD8T=CD8TCells MONO=Monocytes
 
-dimensions dimX=cell dimY=region dimA=strand
 sortOrder cell=+ region=+ strand=+ view=+
 filterComposite dimA
 
@@ -40,6 +39,7 @@ viewLimits -10:10
 viewLimitsMax -30:30
 windowingFunction maximum
 transformFunc LOG
+dimensions dimX=cell dimY=region dimA=strand
 
 
 #########################################################
@@ -63,6 +63,7 @@ viewLimits -10:10
 viewLimitsMax -30:30
 windowingFunction maximum
 transformFunc LOG
+dimensions dimX=cell dimY=region dimA=strand
 
 #########################################################
 CELL TYPES
