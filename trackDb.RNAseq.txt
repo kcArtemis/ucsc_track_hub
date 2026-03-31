@@ -28,8 +28,8 @@ subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup3 cell CellType CD8T=CD8T MONO=Monocytes OPC=OPCs PERI=Pericytes 
 subGroup4 sample Sample S1=S1 S2=S2 S3=S3 S4=S4 S5=S5 S6=S6 S7=S7 S8=S8
 subGroup5 strand Strand plus=Plus minus=Minus
-dimensions dimX=region dimY=cell dimA=view
-filterComposite sample strand
+dimensions dimX=region dimY=cell dimA=view dimB=strand dimC=sample
+filterComposite dimB dimC
 sortOrder view=+ region=+ cell=+ strand=+ sample=+
 
     track RNAseq_PD_APC
