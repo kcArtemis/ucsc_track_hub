@@ -8,43 +8,41 @@ compositeTrack on
 allButtonPair on
 dragAndDrop subTracks
 boxedCfg on
-
 subGroup1 view Views APC=APC
 subGroup2 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup3 cell CellType CD8T=CD8T MONO=Monocytes
-
 dimensions dimX=cell dimY=region dimA=view
 sortOrder view=+ region=+ cell=+ 
 
-  track RNAseq_PD_APC
-  parent RNAseq_PD
-  view APC
-  shortLabel APC
-  longLabel APC normalized RNA-seq
+track RNAseq_PD_APC
+parent RNAseq_PD
+view APC
+shortLabel APC
+longLabel APC normalized RNA-seq
+type bigWig
+visibility full
+viewUi on
+maxHeightPixels 100:60:5
+autoScale on
+alwaysZero on
+windowingFunction maximum
+transformFunc LOG
+
+  track midbrain_CD8T_APC_plus
+  parent RNAseq_PD_APC
+  shortLabel CD8T APC +
+  longLabel CD8T APC + data 
   type bigWig
-  visibility full
-  viewUi on
-  maxHeightPixels 100:60:5
-  autoScale on
-  alwaysZero on
-  windowingFunction maximum
-  transformFunc LOG
+  bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
+  subGroups view=APC cell=CD8T region=MIDBRAIN 
+  color 0,100,255
 
-    track midbrain_CD8T_APC_plus
-    parent RNAseq_PD_APC
-    shortLabel CD8T APC +
-    longLabel CD8T APC + data 
-    type bigWig
-    bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-    subGroups view=APC cell=CD8T region=MIDBRAIN 
-    color 0,100,255
-
-    track midbrain_MONO_APC_plus
-    parent RNAseq_PD_APC
-    shortLabel MONO APC +
-    longLabel MONO APC + data 
-    type bigWig
-    bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-    subGroups view=APC cell=MONO region=MTG 
-    color 0,100,255
+  track midbrain_MONO_APC_plus
+  parent RNAseq_PD_APC
+  shortLabel MONO APC +
+  longLabel MONO APC + data 
+  type bigWig
+  bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
+  subGroups view=APC cell=MONO region=MTG 
+  color 0,100,255
 
