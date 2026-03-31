@@ -1,2 +1,2 @@
-include trackDb.RNASeq_v2.txt
+include trackDb.RNASeq.txt
 include trackDb.ATACseq.txt
