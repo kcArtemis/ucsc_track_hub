@@ -80,42 +80,6 @@ sortOrder view=+ region=+ cell=+
         subGroups view=APC cell=OPC region=MTG 
         color 0,100,255
 
-        track midbrain_CD8T_APC_minus
-        parent RNAseq_PD_APC
-        shortLabel CD8T APC -
-        longLabel CD8T APC - data
-        type bigWig
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-        subGroups view=APC cell=CD8T region=MIDBRAIN
-        color 0,100,255
-
-        track midbrain_MONO_APC_minus
-        parent RNAseq_PD_APC
-        shortLabel MONO APC -
-        longLabel MONO APC - data
-        type bigWig
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-        subGroups view=APC cell=MONO region=MIDBRAIN
-        color 0,100,255
-
-        track mtg_PERI_APC_minus
-        parent RNAseq_PD_APC
-        shortLabel PERI APC - MTG
-        longLabel PERI APC - data (MTG)
-        type bigWig
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
-        subGroups view=APC cell=PERI region=MTG 
-        color 0,100,255
-
-        track mtg_OPC_APC_minus
-        parent RNAseq_PD_APC
-        shortLabel OPC APC - MTG
-        longLabel OPC APC - data (MTG)
-        type bigWig
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-        subGroups view=APC cell=OPC region=MTG 
-        color 0,100,255
-
 ############################################
 # INDIVIDUAL SAMPLE TRACKS
 ############################################
