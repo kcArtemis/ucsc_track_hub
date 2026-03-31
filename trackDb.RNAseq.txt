@@ -23,10 +23,9 @@ dragAndDrop subTracks
 parent RNAseq_PD
 type bigWig
 subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
-subGroup2 source Source CellType=CellType
-subGroup3 cell CellType CD8T=CD8T MONO=Monocytes OPC=OPCs PERI=Pericytes
-subGroup4 view Views APC=APC
-subGroup5 name Name N1=CD8T N2=Monocytes N3=OPCs N4=Pericytes
+subGroup2 cell CellType CD8T=CD8T MONO=Monocytes OPC=OPCs PERI=Pericytes
+subGroup3 view Views APC=APC
+subGroup4 name Name N1=CD8T N2=Monocytes N3=OPCs N4=Pericytes
 dimensions dimX=region dimY=name dimA=view
 sortOrder region=+ name=+ view=+
 
@@ -48,7 +47,7 @@ sortOrder region=+ name=+ view=+
         longLabel CD8T APC data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN source=CellType cell=CD8T name=N1
+        subGroups view=APC region=MIDBRAIN cell=CD8T name=N1
         color 0,100,255
 
         track midbrain_MONO_APC
@@ -57,7 +56,7 @@ sortOrder region=+ name=+ view=+
         longLabel MONO APC data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN source=CellType cell=MONO name=N2
+        subGroups view=APC region=MIDBRAIN cell=MONO name=N2
         color 0,100,255
 
         track mtg_OPC_APC
@@ -66,7 +65,7 @@ sortOrder region=+ name=+ view=+
         longLabel OPC APC data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-        subGroups view=APC region=MTG source=CellType cell=OPC name=N3
+        subGroups view=APC region=MTG cell=OPC name=N3
         color 0,100,255
 
         track mtg_PERI_APC
@@ -75,7 +74,7 @@ sortOrder region=+ name=+ view=+
         longLabel PERI APC data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
-        subGroups view=APC region=MTG source=CellType cell=PERI name=N4
+        subGroups view=APC region=MTG cell=PERI name=N4
         color 0,100,255
 
 ############################################
