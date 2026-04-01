@@ -81,57 +81,94 @@ sortOrder region=+ name=+ view=+ strand=+
         subGroups view=APC region=MTG cell=ASTRO name=N1 strand=minus
         color 0,100,255
 
-        track cd8t_APC_plus
+        track cd8t_APC_plus_mb
         parent combined_brainregion_APC
-        shortLabel CD8T APC +
+        shortLabel CD8T APC + MB
         longLabel CD8TCells APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=CD8T name=N2 strand=plus
         color 0,100,255
 
-        track cd8t_APC_minus
+        track cd8t_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel CD8T APC -
+        shortLabel CD8T APC - MB
         longLabel CD8TCells APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=CD8T name=N2 strand=minus
         color 0,100,255
 
-        track endothelial_APC_plus
+        track endothelial_APC_plus_mb
         parent combined_brainregion_APC
-        shortLabel Endo APC +
+        shortLabel Endo APC + MB
         longLabel Endothelialcell APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fa80d17ebc253235/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=plus
         color 0,100,255
 
-        track endothelial_APC_minus
+        track endothelial_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel Endo APC -
+        shortLabel Endo APC - MB
         longLabel Endothelialcell APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357c5a9754fa86fe49/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=minus
         color 0,100,255
 
-        track gaba_APC_plus
+
+        track endothelial_APC_plus_mtg
         parent combined_brainregion_APC
-        shortLabel GABA APC +
+        shortLabel Endo APC + MTG
+        longLabel Endothelialcell APC avg_cell plus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721356cbef0e859636553/display?to_ext=bigwig
+        subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=plus
+        color 0,100,255
+
+        track endothelial_APC_minus_mtg
+        parent combined_brainregion_APC
+        shortLabel Endo APC - MTG
+        longLabel Endothelialcell APC avg_cell minus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721353264eb4b6c1fe9ff/display?to_ext=bigwig
+        subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=minus
+        color 0,100,255
+
+        track gaba_APC_plus_mb
+        parent combined_brainregion_APC
+        shortLabel GABA APC + MB
         longLabel GABAneurons APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=plus
         color 0,100,255
 
-        track gaba_APC_minus
+        track gaba_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel GABA APC -
+        shortLabel GABA APC - MB
         longLabel GABAneurons APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213587a6ba0fc18398aa/display?to_ext=bigwig
+        subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=minus
+        color 0,100,255
+
+        track gaba_APC_plus_mtg
+        parent combined_brainregion_APC
+        shortLabel GABA APC + MTG
+        longLabel GABAneurons APC avg_cell plus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721355fbc16482d8b2d3f/display?to_ext=bigwig
+        subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=plus
+        color 0,100,255
+
+        track gaba_APC_minus_mtg
+        parent combined_brainregion_APC
+        shortLabel GABA APC - MTG
+        longLabel GABAneurons APC avg_cell minus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721351bb06d1da218fceb/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=minus
         color 0,100,255
 
