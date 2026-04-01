@@ -29,7 +29,7 @@ subGroup4 name Name N1=Astrocytes N2=CD8T N3=Endothelialcell N4=GABAneurons N5=G
 dimensions dimX=region dimY=name dimA=view
 sortOrder region=+ name=+ view=+
 
-    track combined_brainregion_APC
+    track combined_brainregion_APC_ATAC
     parent combined_brainregion
     shortLabel APC
     longLabel APC normalized ATAC-seq
@@ -48,7 +48,7 @@ sortOrder region=+ name=+ view=+
     yLineColor 0,0,0
 
         track astrocytes_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Astro APC Midbrain
         longLabel Astrocytes APC avg_cell 
         type bigWig
@@ -58,7 +58,7 @@ sortOrder region=+ name=+ view=+
         color 8,88,158
 
         track astrocytes_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Astro APC MTG
         longLabel Astrocytes APC avg_cell plus
         type bigWig
@@ -68,7 +68,7 @@ sortOrder region=+ name=+ view=+
         color 8,88,158
 
         track cd8t_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel CD8T APC MB
         longLabel CD8TCells APC avg_cell plus
         type bigWig
@@ -78,7 +78,7 @@ sortOrder region=+ name=+ view=+
         color 251,128,114
 
         track cd8t_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel CD8T APC MTG
         longLabel CD8TCells APC avg_cell plus
         type bigWig
@@ -88,7 +88,7 @@ sortOrder region=+ name=+ view=+
         color 251,128,114
 
         track endothelial_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Endo APC MB
         longLabel Endothelialcell APC avg_cell plus
         type bigWig
@@ -98,7 +98,7 @@ sortOrder region=+ name=+ view=+
         color 202,178,214
 
         track endothelial_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Endo APC MTG
         longLabel Endothelialcell APC avg_cell plus
         type bigWig
@@ -108,7 +108,7 @@ sortOrder region=+ name=+ view=+
         color 202,178,214
 
         track gaba_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel GABA APC MB
         longLabel GABAneurons APC avg_cell plus
         type bigWig
@@ -118,7 +118,7 @@ sortOrder region=+ name=+ view=+
         color 166,206,227
 
         track gaba_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel GABA APC MTG
         longLabel GABAneurons APC avg_cell plus
         type bigWig
@@ -128,7 +128,7 @@ sortOrder region=+ name=+ view=+
         color 166,206,227
 
         track glu_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Glu APC MB
         longLabel Gluneurons APC avg_cell plus
         type bigWig
@@ -137,7 +137,7 @@ sortOrder region=+ name=+ view=+
         color 31,120,180
 
         track glu_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Glu APC MTG
         longLabel Gluneurons APC avg_cell plus
         type bigWig
@@ -147,7 +147,7 @@ sortOrder region=+ name=+ view=+
         color 31,120,180
 
         track microglia_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Micro APC MB
         longLabel Microglia APC avg_cell
         type bigWig
@@ -157,7 +157,7 @@ sortOrder region=+ name=+ view=+
         color 166,86,40
 
         track microglia_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Micro APC MTG
         longLabel Microglia APC avg_cell
         type bigWig
@@ -167,7 +167,7 @@ sortOrder region=+ name=+ view=+
         color 166,86,40
 
         track monocytes_APC
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Mono APC
         longLabel Monocytes APC avg_cell
         type bigWig
@@ -177,7 +177,7 @@ sortOrder region=+ name=+ view=+
         color 253,191,111
 
         track oligodendrocytes_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Oligo APC MB
         longLabel Oligodendrocytes APC avg_cell
         type bigWig
@@ -187,7 +187,7 @@ sortOrder region=+ name=+ view=+
         color 1,100,80
 
         track oligodendrocytes_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Oligo APC MTG
         longLabel Oligodendrocytes APC avg_cell
         type bigWig
@@ -197,7 +197,7 @@ sortOrder region=+ name=+ view=+
         color 1,100,80
 
         track opcs_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel OPC APC MB
         longLabel OPCs APC avg_cell
         type bigWig
@@ -207,7 +207,7 @@ sortOrder region=+ name=+ view=+
         color 106,61,154
 
         track opcs_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel OPC APC MTG
         longLabel OPCs APC avg_cell
         type bigWig
@@ -217,7 +217,7 @@ sortOrder region=+ name=+ view=+
         color 106,61,154
 
         track pericytes_APC_mb
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Peri APC MB
         longLabel Pericytes APC avg_cell
         type bigWig
@@ -227,7 +227,7 @@ sortOrder region=+ name=+ view=+
         color 116,196,118
 
         track pericytes_APC_mtg
-        parent combined_brainregion_APC
+        parent combined_brainregion_APC_ATAC
         shortLabel Peri APC MTG
         longLabel Pericytes APC avg_cell
         type bigWig
@@ -236,7 +236,7 @@ sortOrder region=+ name=+ view=+
         subGroups view=APC region=MTG cell=PERI name=N10 
         color 116,196,118
 
-    track combined_brainregion_PW
+    track combined_brainregion_PW_ATAC
     parent combined_brainregion
     shortLabel PW
     longLabel PW normalized ATAC-seq
@@ -252,7 +252,7 @@ sortOrder region=+ name=+ view=+
     transformFunc LOG
 
         track astrocytes_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Astro PW MB
         longLabel Astrocytes PW mean_by_donor
         type bigWig
@@ -261,7 +261,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track astrocytes_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Astro PW MTG
         longLabel Astrocytes PW mean_by_donor
         type bigWig
@@ -270,7 +270,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track cd8t_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel CD8T PW
         longLabel CD8TCells PW mean_by_donor
         type bigWig
@@ -279,7 +279,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track cd8t_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel CD8T PW MTG
         longLabel CD8TCells PW mean_by_donor
         type bigWig
@@ -288,7 +288,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track endothelial_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Endo PW MB
         longLabel Endothelialcell PW mean_by_donor
         type bigWig
@@ -297,7 +297,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track endothelial_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Endo PW MTG
         longLabel Endothelialcell PW mean_by_donor
         type bigWig
@@ -306,7 +306,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track gaba_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel GABA PW MB
         longLabel GABAneurons PW mean_by_donor
         type bigWig
@@ -315,7 +315,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track gaba_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel GABA PW MTG
         longLabel GABAneurons PW mean_by_donor
         type bigWig
@@ -324,7 +324,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track glu_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Glu PW MB
         longLabel Gluneurons PW mean_by_donor
         type bigWig
@@ -333,7 +333,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track glu_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Glu PW MTG
         longLabel Gluneurons PW mean_by_donor
         type bigWig
@@ -342,7 +342,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track microglia_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Micro PW MB
         longLabel Microglia PW mean_by_donor
         type bigWig
@@ -351,7 +351,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track microglia_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Micro PW MTG
         longLabel Microglia PW mean_by_donor
         type bigWig
@@ -360,7 +360,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track monocytes_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Mono PW MB
         longLabel Monocytes PW mean_by_donor
         type bigWig
@@ -369,7 +369,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track oligodendrocytes_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Oligo PW MB
         longLabel Oligodendrocytes PW mean_by_donor 
         type bigWig
@@ -378,7 +378,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track oligodendrocytes_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Oligo PW MTG
         longLabel Oligodendrocytes PW mean_by_donor 
         type bigWig
@@ -387,7 +387,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track opcs_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel OPC PW MB
         longLabel OPCs PW mean_by_donor
         type bigWig
@@ -396,7 +396,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track opcs_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel OPC PW MTG
         longLabel OPCs PW mean_by_donor
         type bigWig
@@ -405,7 +405,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
 
         track pericytes_PW_MB
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Peri PW MB
         longLabel Pericytes PW mean_by_donor
         type bigWig
@@ -414,7 +414,7 @@ sortOrder region=+ name=+ view=+
         color 255,100,0
         
         track pericytes_PW_MTG
-        parent combined_brainregion_PW
+        parent combined_brainregion_PW_ATAC
         shortLabel Peri PW MTG
         longLabel Pericytes PW mean_by_donor
         type bigWig
