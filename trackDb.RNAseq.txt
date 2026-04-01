@@ -66,7 +66,7 @@ sortOrder region=+ name=+ view=+
         longLabel OPC APC data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=OPC name=N3 strand=plus
+        subGroups view=APC region=MIDBRAIN cell=OPC name=N3 strand=plus
         color 0,100,255
 
         track mtg_PERI_APC_plus
@@ -75,7 +75,7 @@ sortOrder region=+ name=+ view=+
         longLabel PERI APC data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fe7dd23075091a2d/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=PERI name=N4 strand=plus
+        subGroups view=APC region=MIDBRAIN cell=PERI name=N4 strand=plus
         color 0,100,255
 
         track midbrain_CD8T_APC_minus
@@ -102,7 +102,7 @@ sortOrder region=+ name=+ view=+
         longLabel OPC APC  negative data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135d55297fca444a2b2/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=OPC name=N3 strand=minus
+        subGroups view=APC region=MIDBRAIN cell=OPC name=N3 strand=minus
         color 0,100,255
 
         track mtg_PERI_APC_minus
@@ -111,7 +111,7 @@ sortOrder region=+ name=+ view=+
         longLabel PERI APC negative data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213532c32c5c7d8504d0/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=PERI name=N4 strand=minus
+        subGroups view=APC region=MIDBRAIN cell=PERI name=N4 strand=minus
         color 0,100,255
 
 ############################################
