@@ -26,8 +26,9 @@ subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup2 cell CellType CD8T=CD8T MONO=Monocytes OPC=OPCs PERI=Pericytes
 subGroup3 view Views APC=APC
 subGroup4 name Name N1=CD8T N2=Monocytes N3=OPCs N4=Pericytes
-dimensions dimX=region dimY=name dimA=view
-sortOrder region=+ name=+ view=+
+subGroup5 strand Strand plus=Plus minus=Minus
+dimensions dimX=region dimY=name dimA=view dimB=strand
+sortOrder region=+ name=+ view=+ 
 
     track RNAseq_PD_APC
     shortLabel APC
@@ -41,40 +42,76 @@ sortOrder region=+ name=+ view=+
     parent composite_brainRegion
     type bigWig
 
-        track midbrain_CD8T_APC
+        track midbrain_CD8T_APC_plus
         parent RNAseq_PD_APC
-        shortLabel CD8T APC
-        longLabel CD8T APC data
+        shortLabel CD8T APC +
+        longLabel CD8T APC postive strand
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=CD8T name=N1
+        subGroups view=APC region=MIDBRAIN cell=CD8T name=N1 strand=plus
         color 0,100,255
 
-        track midbrain_MONO_APC
+        track midbrain_MONO_APC_plus
         parent RNAseq_PD_APC
-        shortLabel MONO APC
+        shortLabel MONO APC +
         longLabel MONO APC data
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=MONO name=N2
+        subGroups view=APC region=MIDBRAIN cell=MONO name=N2 strand=plus
         color 0,100,255
 
-        track mtg_OPC_APC
+        track mtg_OPC_APC_plus
         parent RNAseq_PD_APC
-        shortLabel OPC APC MTG
+        shortLabel OPC APC MTG +
         longLabel OPC APC data (MTG)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=OPC name=N3
+        subGroups view=APC region=MTG cell=OPC name=N3 strand=plus
         color 0,100,255
 
-        track mtg_PERI_APC
+        track mtg_PERI_APC_plus
         parent RNAseq_PD_APC
-        shortLabel PERI APC MTG
+        shortLabel PERI APC MTG +
         longLabel PERI APC data (MTG)
         type bigWig
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=PERI name=N4
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fe7dd23075091a2d/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=PERI name=N4 strand=plus
+        color 0,100,255
+
+        track midbrain_CD8T_APC_minus
+        parent RNAseq_PD_APC
+        shortLabel CD8T APC -
+        longLabel CD8T APC negative strand
+        type bigWig
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/display?to_ext=bigwig
+        subGroups view=APC region=MIDBRAIN cell=CD8T name=N1 strand=minus
+        color 0,100,255
+
+        track midbrain_MONO_APC_minus
+        parent RNAseq_PD_APC
+        shortLabel MONO APC -
+        longLabel MONO APC negative data
+        type bigWig
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fb3db6bbe3c8f75f/display?to_ext=bigwig
+        subGroups view=APC region=MIDBRAIN cell=MONO name=N2 strand=minus
+        color 0,100,255
+
+        track mtg_OPC_APC_minus
+        parent RNAseq_PD_APC
+        shortLabel OPC APC MTG -
+        longLabel OPC APC  negative data
+        type bigWig
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135d55297fca444a2b2/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=OPC name=N3 strand=minus
+        color 0,100,255
+
+        track mtg_PERI_APC_minus
+        parent RNAseq_PD_APC
+        shortLabel PERI APC MTG -
+        longLabel PERI APC negative data
+        type bigWig
+        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213532c32c5c7d8504d0/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=PERI name=N4 strand=minus
         color 0,100,255
 
 ############################################
