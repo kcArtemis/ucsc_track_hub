@@ -44,6 +44,9 @@ sortOrder region=+ name=+ view=+ strand=+
     alwaysZero on
     windowingFunction maximum
     transformFunc LOG
+    yLineOnOff on
+    yLineMark 0
+    yLineColor 0,0,0
 
         track astrocytes_APC_plus_mb
         parent combined_brainregion_APC
