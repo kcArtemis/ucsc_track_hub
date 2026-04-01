@@ -45,22 +45,40 @@ sortOrder region=+ name=+ view=+ strand=+
     windowingFunction maximum
     transformFunc LOG
 
-        track astrocytes_APC_plus
+        track astrocytes_APC_plus_mb
         parent combined_brainregion_APC
-        shortLabel Astro APC +
+        shortLabel Astro APC + Midbrain
         longLabel Astrocytes APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357b466dd2ecc1c6ff/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=ASTRO name=N1 strand=plus
         color 0,100,255
 
-        track astrocytes_APC_minus
+        track astrocytes_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel Astro APC -
+        shortLabel Astro APC - Midbrain
         longLabel Astrocytes APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540ac72631581338f/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=ASTRO name=N1 strand=minus
+        color 0,100,255
+
+        track astrocytes_APC_plus_mtg
+        parent combined_brainregion_APC
+        shortLabel Astro APC + MTG
+        longLabel Astrocytes APC avg_cell plus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721357bc0d726cc408141/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=ASTRO name=N1 strand=plus
+        color 0,100,255
+
+        track astrocytes_APC_minus_mtg
+        parent combined_brainregion_APC
+        shortLabel Astro APC - MTG
+        longLabel Astrocytes APC avg_cell minus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135a95c9cb890a394d1/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=ASTRO name=N1 strand=minus
         color 0,100,255
 
         track cd8t_APC_plus
