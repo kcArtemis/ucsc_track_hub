@@ -426,7 +426,7 @@ sortOrder region=+ name=+ view=+
 # INDIVIDUAL SAMPLE TRACKS
 ############################################
 
-track RNAseq_PD_individual
+track ATACseq_PD_individual
 shortLabel individual
 longLabel ATAC-seq tracks for all samples
 visibility hide
