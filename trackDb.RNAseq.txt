@@ -45,7 +45,7 @@ sortOrder region=+ name=+ view=+ strand=+
     windowingFunction maximum
     transformFunc LOG
 
-        track astrocytes_APC_plus_mb
+        track 01_astrocytes_APC_plus_mb
         parent combined_brainregion_APC
         shortLabel Astro APC + Midbrain
         longLabel Astrocytes APC avg_cell plus
@@ -54,7 +54,7 @@ sortOrder region=+ name=+ view=+ strand=+
         subGroups view=APC region=MIDBRAIN cell=ASTRO name=N1 strand=plus
         color 8,88,158
 
-        track astrocytes_APC_minus_mb
+        track 02_astrocytes_APC_minus_mb
         parent combined_brainregion_APC
         shortLabel Astro APC - Midbrain
         longLabel Astrocytes APC avg_cell minus
