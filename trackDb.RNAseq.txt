@@ -71,6 +71,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Astro APC + MTG
         longLabel Astrocytes APC avg_cell plus
         type bigWig
+        priority 7
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721357bc0d726cc408141/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=ASTRO name=N1 strand=plus
         color 8,88,158
@@ -80,6 +81,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Astro APC - MTG
         longLabel Astrocytes APC avg_cell minus
         type bigWig
+        priority 8
         negateValues on
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135a95c9cb890a394d1/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=ASTRO name=N1 strand=minus
@@ -90,6 +92,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel CD8T APC + MB
         longLabel CD8TCells APC avg_cell plus
         type bigWig
+        priority 9
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=CD8T name=N2 strand=plus
         color 251,128,114
@@ -100,6 +103,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel CD8TCells APC avg_cell minus
         negateValues on
         type bigWig
+        priority 10
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=CD8T name=N2 strand=minus
         color 126,64,57
@@ -109,6 +113,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Endo APC + MB
         longLabel Endothelialcell APC avg_cell plus
         type bigWig
+        priority 11
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fa80d17ebc253235/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=plus
         color 202,178,214
@@ -119,6 +124,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Endothelialcell APC avg_cell minus
         negateValues on
         type bigWig
+        priority 12
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357c5a9754fa86fe49/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=minus
         color 101,89,107
@@ -129,6 +135,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Endo APC + MTG
         longLabel Endothelialcell APC avg_cell plus
         type bigWig
+        priority 13
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721356cbef0e859636553/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=ENDO name=N3 strand=plus
         color 202,178,214
@@ -139,6 +146,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Endothelialcell APC avg_cell minus
         negateValues on
         type bigWig
+        priority 14
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721353264eb4b6c1fe9ff/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=ENDO name=N3 strand=minus
         color 101,89,107
@@ -148,6 +156,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel GABA APC + MB
         longLabel GABAneurons APC avg_cell plus
         type bigWig
+        priority 15
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=plus
         color 166,206,227
@@ -158,6 +167,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel GABAneurons APC avg_cell minus
         negateValues on
         type bigWig
+        priority 16
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213587a6ba0fc18398aa/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=minus
         color 83,103,114
@@ -167,6 +177,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel GABA APC + MTG
         longLabel GABAneurons APC avg_cell plus
         type bigWig
+        priority 17
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721355fbc16482d8b2d3f/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=GABA name=N4 strand=plus
         color 166,206,227
@@ -177,6 +188,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel GABAneurons APC avg_cell minus
         negateValues on
         type bigWig
+        priority 18
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721351bb06d1da218fceb/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=GABA name=N4 strand=minus
         color 83,103,114
@@ -196,6 +208,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Gluneurons APC avg_cell minus
         negateValues on
         type bigWig
+        priority 19
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721359b7626e9fc98b319/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=GLU name=N5 strand=minus
         color 16,60,90
@@ -205,6 +218,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Glu APC + MTG
         longLabel Gluneurons APC avg_cell plus
         type bigWig
+        priority 20
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135da75a870563339bc/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=GLU name=N5 strand=plus
         color 31,120,180
@@ -215,6 +229,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Gluneurons APC avg_cell minus
         negateValues on
         type bigWig
+        priority 21
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213564cdc447752b39ee/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=GLU name=N5 strand=minus
         color 16,60,90
@@ -224,6 +239,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Micro APC + MB
         longLabel Microglia APC avg_cell plus
         type bigWig
+        priority 22
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135afb0bb06cb6c7a7e/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=MICRO name=N6 strand=plus
         color 166,86,40
@@ -234,6 +250,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Microglia APC avg_cell minus
         negateValues on
         type bigWig
+        priority 23
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=MICRO name=N6 strand=minus
         color 83,43,20
@@ -243,6 +260,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Micro APC + MTG
         longLabel Microglia APC avg_cell plus
         type bigWig
+        priority 24
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fa264ec1a5860f3b/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=MICRO name=N6 strand=plus
         color 166,86,40
@@ -253,6 +271,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Microglia APC avg_cell minus
         negateValues on
         type bigWig
+        priority 25
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135dae37d4ea028d166/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=MICRO name=N6 strand=minus
         color 83,43,20
@@ -262,6 +281,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Mono APC +
         longLabel Monocytes APC avg_cell plus
         type bigWig
+        priority 26
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=MONO name=N7 strand=plus
         color 253,191,111
@@ -272,6 +292,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Monocytes APC avg_cell minus
         negateValues on
         type bigWig
+        priority 27
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fb3db6bbe3c8f75f/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=MONO name=N7 strand=minus
         color 126,96,56
@@ -281,6 +302,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Oligo APC + MB
         longLabel Oligodendrocytes APC avg_cell plus
         type bigWig
+        priority 28
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213598f5cbd5ffe65375/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=OLIGO name=N8 strand=plus
         color 1,100,80
@@ -291,6 +313,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Oligodendrocytes APC avg_cell minus
         negateValues on
         type bigWig
+        priority 29
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fd2f73fbf43d6879/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=OLIGO name=N8 strand=minus
         color 0,50,40
@@ -300,6 +323,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Oligo APC + MTG
         longLabel Oligodendrocytes APC avg_cell plus
         type bigWig
+        priority 30
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213592579f520ab88a2a/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=OLIGO name=N8 strand=plus
         color 1,100,80
@@ -310,6 +334,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Oligodendrocytes APC avg_cell minus
         negateValues on
         type bigWig
+        priority 31
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721355f8481e2f9608eb7/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=OLIGO name=N8 strand=minus
         color 0,50,40
@@ -319,6 +344,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel OPC APC + MB
         longLabel OPCs APC avg_cell plus
         type bigWig
+        priority 32
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=OPC name=N9 strand=plus
         color 106,61,154
@@ -329,6 +355,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel OPCs APC avg_cell minus
         negateValues on
         type bigWig
+        priority 33
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135d55297fca444a2b2/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=OPC name=N9 strand=minus
         color 53,30,77
@@ -338,6 +365,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel OPC APC + MTG
         longLabel OPCs APC avg_cell plus
         type bigWig
+        priority 34
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721350273fe9c11f042a5/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=OPC name=N9 strand=plus
         color 106,61,154
@@ -348,6 +376,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel OPCs APC avg_cell minus
         negateValues on
         type bigWig
+        priority 35
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135ac4c575e07b8fe2f/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=OPC name=N9 strand=minus
         color 53,30,77
@@ -357,6 +386,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Peri APC + MB
         longLabel Pericytes APC avg_cell plus
         type bigWig
+        priority 36
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fe7dd23075091a2d/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=PERI name=N10 strand=plus
         color 116,196,118
@@ -367,6 +397,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Pericytes APC avg_cell minus
         negateValues on
         type bigWig
+        priority 37
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213532c32c5c7d8504d0/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=PERI name=N10 strand=minus
         color 58,98,59
@@ -376,6 +407,7 @@ sortOrder region=+ name=+ view=+ strand=+
         shortLabel Peri APC + MTG
         longLabel Pericytes APC avg_cell plus
         type bigWig
+        priority 38
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213563919473602f9fe2/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=PERI name=N10 strand=plus
         color 116,196,118
@@ -386,6 +418,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Pericytes APC avg_cell minus
         negateValues on
         type bigWig
+        priority 39
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213581c71c17b72b68b5/display?to_ext=bigwig
         subGroups view=APC region=MTG cell=PERI name=N10 strand=minus
         color 58,98,59
