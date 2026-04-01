@@ -12,7 +12,7 @@ superTrack on show
 # COMBINED BRAIN REGION TRACKS
 ############################################
 
-track combined_brainregion
+track combined_brainregion_ATAC
 shortLabel combined_brainregion
 longLabel ATAC-seq combined tracks for cell types from Midbrain
 visibility hide
@@ -30,7 +30,7 @@ dimensions dimX=region dimY=name dimA=view
 sortOrder region=+ name=+ view=+
 
     track combined_brainregion_APC_ATAC
-    parent combined_brainregion
+    parent combined_brainregion_ATAC
     shortLabel APC
     longLabel APC normalized ATAC-seq
     view APC
@@ -237,7 +237,7 @@ sortOrder region=+ name=+ view=+
         color 116,196,118
 
     track combined_brainregion_PW_ATAC
-    parent combined_brainregion
+    parent combined_brainregion_ATAC
     shortLabel PW
     longLabel PW normalized ATAC-seq
     view PW
