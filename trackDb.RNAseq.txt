@@ -22,7 +22,7 @@ compositeTrack on
 dragAndDrop subTracks
 parent RNAseq_PD
 type bigWig
-subGroup1 region Region MIDBRAIN=Midbrain
+subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup2 cell CellType ASTRO=Astrocytes CD8T=CD8T ENDO=Endothelialcell GABA=GABAneurons GLU=Gluneurons MICRO=Microglia MONO=Monocytes OLIGO=Oligodendrocytes OPC=OPCs PERI=Pericytes
 subGroup3 view Views APC=APC PW=PW
 subGroup4 name Name N1=Astrocytes N2=CD8T N3=Endothelialcell N4=GABAneurons N5=Gluneurons N6=Microglia N7=Monocytes N8=Oligodendrocytes N9=OPCs N10=Pericytes
