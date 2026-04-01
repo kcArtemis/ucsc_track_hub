@@ -124,7 +124,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Endothelialcell APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721356cbef0e859636553/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=plus
+        subGroups view=APC region=MTG cell=ENDO name=N3 strand=plus
         color 0,100,255
 
         track endothelial_APC_minus_mtg
@@ -133,7 +133,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Endothelialcell APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721353264eb4b6c1fe9ff/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=minus
+        subGroups view=APC region=MTG cell=ENDO name=N3 strand=minus
         color 0,100,255
 
         track gaba_APC_plus_mb
@@ -160,7 +160,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel GABAneurons APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721355fbc16482d8b2d3f/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=plus
+        subGroups view=APC region=MTG cell=GABA name=N4 strand=plus
         color 0,100,255
 
         track gaba_APC_minus_mtg
@@ -169,43 +169,79 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel GABAneurons APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721351bb06d1da218fceb/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=minus
+        subGroups view=APC region=MTG cell=GABA name=N4 strand=minus
         color 0,100,255
 
-        track glu_APC_plus
+        track glu_APC_plus_mb
         parent combined_brainregion_APC
-        shortLabel Glu APC +
+        shortLabel Glu APC + MB
         longLabel Gluneurons APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135acb74d35d8a956ff/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=GLU name=N5 strand=plus
         color 0,100,255
 
-        track glu_APC_minus
+        track glu_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel Glu APC -
+        shortLabel Glu APC - MB
         longLabel Gluneurons APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721359b7626e9fc98b319/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=GLU name=N5 strand=minus
         color 0,100,255
 
-        track microglia_APC_plus
+        track glu_APC_plus_mtg
         parent combined_brainregion_APC
-        shortLabel Micro APC +
+        shortLabel Glu APC + MTG
+        longLabel Gluneurons APC avg_cell plus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135da75a870563339bc/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=GLU name=N5 strand=plus
+        color 0,100,255
+
+        track glu_APC_minus_mtg
+        parent combined_brainregion_APC
+        shortLabel Glu APC - MTG
+        longLabel Gluneurons APC avg_cell minus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213564cdc447752b39ee/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=GLU name=N5 strand=minus
+        color 0,100,255
+
+        track microglia_APC_plus_mb
+        parent combined_brainregion_APC
+        shortLabel Micro APC + MB
         longLabel Microglia APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135afb0bb06cb6c7a7e/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=MICRO name=N6 strand=plus
         color 0,100,255
 
-        track microglia_APC_minus
+        track microglia_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel Micro APC -
+        shortLabel Micro APC - MB
         longLabel Microglia APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=MICRO name=N6 strand=minus
+        color 0,100,255
+
+        track microglia_APC_plus_mtg
+        parent combined_brainregion_APC
+        shortLabel Micro APC + MTG
+        longLabel Microglia APC avg_cell plus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fa264ec1a5860f3b/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=MICRO name=N6 strand=plus
+        color 0,100,255
+
+        track microglia_APC_minus_mtg
+        parent combined_brainregion_APC
+        shortLabel Micro APC - MTG
+        longLabel Microglia APC avg_cell minus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135dae37d4ea028d166/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=MICRO name=N6 strand=minus
         color 0,100,255
 
         track monocytes_APC_plus
@@ -226,58 +262,112 @@ sortOrder region=+ name=+ view=+ strand=+
         subGroups view=APC region=MIDBRAIN cell=MONO name=N7 strand=minus
         color 0,100,255
 
-        track oligodendrocytes_APC_plus
+        track oligodendrocytes_APC_plus_mb
         parent combined_brainregion_APC
-        shortLabel Oligo APC +
+        shortLabel Oligo APC + MB
         longLabel Oligodendrocytes APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213598f5cbd5ffe65375/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=OLIGO name=N8 strand=plus
         color 0,100,255
 
-        track oligodendrocytes_APC_minus
+        track oligodendrocytes_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel Oligo APC -
+        shortLabel Oligo APC - MB
         longLabel Oligodendrocytes APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fd2f73fbf43d6879/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=OLIGO name=N8 strand=minus
         color 0,100,255
 
-        track opcs_APC_plus
+        track oligodendrocytes_APC_plus_mtg
         parent combined_brainregion_APC
-        shortLabel OPC APC +
+        shortLabel Oligo APC + MTG
+        longLabel Oligodendrocytes APC avg_cell plus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213592579f520ab88a2a/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=OLIGO name=N8 strand=plus
+        color 0,100,255
+
+        track oligodendrocytes_APC_minus_mtg
+        parent combined_brainregion_APC
+        shortLabel Oligo APC - MTG
+        longLabel Oligodendrocytes APC avg_cell minus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721355f8481e2f9608eb7/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=OLIGO name=N8 strand=minus
+        color 0,100,255
+
+        track opcs_APC_plus_mb
+        parent combined_brainregion_APC
+        shortLabel OPC APC + MB
         longLabel OPCs APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=OPC name=N9 strand=plus
         color 0,100,255
 
-        track opcs_APC_minus
+        track opcs_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel OPC APC -
+        shortLabel OPC APC - MB
         longLabel OPCs APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135d55297fca444a2b2/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=OPC name=N9 strand=minus
         color 0,100,255
 
-        track pericytes_APC_plus
+        track opcs_APC_plus_mtg
         parent combined_brainregion_APC
-        shortLabel Peri APC +
+        shortLabel OPC APC + MTG
+        longLabel OPCs APC avg_cell plus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721350273fe9c11f042a5/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=OPC name=N9 strand=plus
+        color 0,100,255
+
+        track opcs_APC_minus_mtg
+        parent combined_brainregion_APC
+        shortLabel OPC APC - MTG
+        longLabel OPCs APC avg_cell minus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135ac4c575e07b8fe2f/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=OPC name=N9 strand=minus
+        color 0,100,255
+
+        track pericytes_APC_plus_mb
+        parent combined_brainregion_APC
+        shortLabel Peri APC + MB
         longLabel Pericytes APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fe7dd23075091a2d/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=PERI name=N10 strand=plus
         color 0,100,255
 
-        track pericytes_APC_minus
+        track pericytes_APC_minus_mb
         parent combined_brainregion_APC
-        shortLabel Peri APC -
+        shortLabel Peri APC - MB
         longLabel Pericytes APC avg_cell minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213532c32c5c7d8504d0/display?to_ext=bigwig
         subGroups view=APC region=MIDBRAIN cell=PERI name=N10 strand=minus
+        color 0,100,255
+
+        track pericytes_APC_plus_mtg
+        parent combined_brainregion_APC
+        shortLabel Peri APC + MTG
+        longLabel Pericytes APC avg_cell plus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213563919473602f9fe2/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=PERI name=N10 strand=plus
+        color 0,100,255
+
+        track pericytes_APC_minus_mtg
+        parent combined_brainregion_APC
+        shortLabel Peri APC - MTG
+        longLabel Pericytes APC avg_cell minus
+        type bigWig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213581c71c17b72b68b5/display?to_ext=bigwig
+        subGroups view=APC region=MTG cell=PERI name=N10 strand=minus
         color 0,100,255
 
     track combined_brainregion_PW
