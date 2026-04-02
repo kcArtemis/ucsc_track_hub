@@ -24,21 +24,21 @@ parent RNAseq_PD
 type bigWig
 subGroup1 region Region MIDBRAIN=Midbrain MTG=Middle_Temporal_Gyrus
 subGroup2 cell CellType ASTRO=Astrocytes CD8T=CD8T ENDO=Endothelialcell GABA=GABAneurons GLU=Gluneurons MICRO=Microglia MONO=Monocytes OLIGO=Oligodendrocytes OPC=OPCs PERI=Pericytes
-subGroup3 view Normalization APC=APC PW=PW
+subGroup3 normalization Normalization APC=APC PW=PW
 subGroup4 name Name N1=Astrocytes N2=CD8T N3=Endothelialcell N4=GABAneurons N5=Gluneurons N6=Microglia N7=Monocytes N8=Oligodendrocytes N9=OPCs N10=Pericytes
 subGroup5 strand Strand plus=Plus minus=Minus
-dimensions dimX=region dimY=name dimA=view dimB=strand
-sortOrder region=+ name=+ view=+ strand=+
+dimensions dimX=region dimY=name dimA=normalization dimB=strand
+sortOrder region=+ name=+ normalization=+ strand=+
 
     track combined_brainregion_APC
     parent combined_brainregion
     shortLabel APC
     longLabel APC normalized RNA-seq
-    view APC
-    subGroups view=APC
+    normalization APC
+    subGroups normalization=APC
     type bigWig
     visibility hide
-    viewUi on
+    normalizationUi on
     aggregate transparentOverlay
     maxHeightPixels 100:60:5
     autoScale on
@@ -56,7 +56,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 5
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357b466dd2ecc1c6ff/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=ASTRO name=N1 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=ASTRO name=N1 strand=plus
         color 8,88,158
 
         track astrocytes_APC_minus_mb
@@ -67,7 +67,7 @@ sortOrder region=+ name=+ view=+ strand=+
         priority 6
         negateValues on
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540ac72631581338f/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=ASTRO name=N1 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=ASTRO name=N1 strand=minus
         color 4,44,79
 
         track astrocytes_APC_plus_mtg
@@ -77,7 +77,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 7
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721357bc0d726cc408141/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=ASTRO name=N1 strand=plus
+        subGroups normalization=APC region=MTG cell=ASTRO name=N1 strand=plus
         color 8,88,158
 
         track astrocytes_APC_minus_mtg
@@ -88,7 +88,7 @@ sortOrder region=+ name=+ view=+ strand=+
         priority 8
         negateValues on
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135a95c9cb890a394d1/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=ASTRO name=N1 strand=minus
+        subGroups normalization=APC region=MTG cell=ASTRO name=N1 strand=minus
         color 4,44,79
 
         track cd8t_APC_plus_mb
@@ -98,7 +98,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 9
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721356ec3b7d1d431be95/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=CD8T name=N2 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=CD8T name=N2 strand=plus
         color 251,128,114
 
         track cd8t_APC_minus_mb
@@ -109,7 +109,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 10
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721353df76dcce036047d/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=CD8T name=N2 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=CD8T name=N2 strand=minus
         color 126,64,57
 
         track endothelial_APC_plus_mb
@@ -119,7 +119,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 11
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fa80d17ebc253235/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=ENDO name=N3 strand=plus
         color 202,178,214
 
         track endothelial_APC_minus_mb
@@ -130,7 +130,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 12
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357c5a9754fa86fe49/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=ENDO name=N3 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=ENDO name=N3 strand=minus
         color 101,89,107
 
 
@@ -141,7 +141,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 13
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721356cbef0e859636553/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=ENDO name=N3 strand=plus
+        subGroups normalization=APC region=MTG cell=ENDO name=N3 strand=plus
         color 202,178,214
 
         track endothelial_APC_minus_mtg
@@ -152,7 +152,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 14
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721353264eb4b6c1fe9ff/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=ENDO name=N3 strand=minus
+        subGroups normalization=APC region=MTG cell=ENDO name=N3 strand=minus
         color 101,89,107
 
         track gaba_APC_plus_mb
@@ -162,7 +162,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 15
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135b3d78d778e9d1e9a/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=GABA name=N4 strand=plus
         color 166,206,227
 
         track gaba_APC_minus_mb
@@ -173,7 +173,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 16
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213587a6ba0fc18398aa/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=GABA name=N4 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=GABA name=N4 strand=minus
         color 83,103,114
 
         track gaba_APC_plus_mtg
@@ -183,7 +183,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 17
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721355fbc16482d8b2d3f/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=GABA name=N4 strand=plus
+        subGroups normalization=APC region=MTG cell=GABA name=N4 strand=plus
         color 166,206,227
 
         track gaba_APC_minus_mtg
@@ -194,7 +194,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 18
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721351bb06d1da218fceb/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=GABA name=N4 strand=minus
+        subGroups normalization=APC region=MTG cell=GABA name=N4 strand=minus
         color 83,103,114
 
         track glu_APC_plus_mb
@@ -203,7 +203,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Gluneurons APC avg_cell plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135acb74d35d8a956ff/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=GLU name=N5 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=GLU name=N5 strand=plus
         color 31,120,180
 
         track glu_APC_minus_mb
@@ -214,7 +214,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 19
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721359b7626e9fc98b319/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=GLU name=N5 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=GLU name=N5 strand=minus
         color 16,60,90
 
         track glu_APC_plus_mtg
@@ -224,7 +224,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 20
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135da75a870563339bc/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=GLU name=N5 strand=plus
+        subGroups normalization=APC region=MTG cell=GLU name=N5 strand=plus
         color 31,120,180
 
         track glu_APC_minus_mtg
@@ -235,7 +235,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 21
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213564cdc447752b39ee/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=GLU name=N5 strand=minus
+        subGroups normalization=APC region=MTG cell=GLU name=N5 strand=minus
         color 16,60,90
 
         track microglia_APC_plus_mb
@@ -245,7 +245,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 22
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135afb0bb06cb6c7a7e/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=MICRO name=N6 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=MICRO name=N6 strand=plus
         color 166,86,40
 
         track microglia_APC_minus_mb
@@ -256,7 +256,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 23
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213582551282a750590d/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=MICRO name=N6 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=MICRO name=N6 strand=minus
         color 83,43,20
 
         track microglia_APC_plus_mtg
@@ -266,7 +266,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 24
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135fa264ec1a5860f3b/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=MICRO name=N6 strand=plus
+        subGroups normalization=APC region=MTG cell=MICRO name=N6 strand=plus
         color 166,86,40
 
         track microglia_APC_minus_mtg
@@ -277,7 +277,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 25
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135dae37d4ea028d166/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=MICRO name=N6 strand=minus
+        subGroups normalization=APC region=MTG cell=MICRO name=N6 strand=minus
         color 83,43,20
 
         track monocytes_APC_plus
@@ -287,7 +287,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 26
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213540a31de73838bfae/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=MONO name=N7 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=MONO name=N7 strand=plus
         color 253,191,111
 
         track monocytes_APC_minus
@@ -298,7 +298,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 27
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fb3db6bbe3c8f75f/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=MONO name=N7 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=MONO name=N7 strand=minus
         color 126,96,56
 
         track oligodendrocytes_APC_plus_mb
@@ -308,7 +308,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 28
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213598f5cbd5ffe65375/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=OLIGO name=N8 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=OLIGO name=N8 strand=plus
         color 1,100,80
 
         track oligodendrocytes_APC_minus_mb
@@ -319,7 +319,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 29
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fd2f73fbf43d6879/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=OLIGO name=N8 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=OLIGO name=N8 strand=minus
         color 0,50,40
 
         track oligodendrocytes_APC_plus_mtg
@@ -329,7 +329,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 30
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213592579f520ab88a2a/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=OLIGO name=N8 strand=plus
+        subGroups normalization=APC region=MTG cell=OLIGO name=N8 strand=plus
         color 1,100,80
 
         track oligodendrocytes_APC_minus_mtg
@@ -340,7 +340,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 31
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721355f8481e2f9608eb7/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=OLIGO name=N8 strand=minus
+        subGroups normalization=APC region=MTG cell=OLIGO name=N8 strand=minus
         color 0,50,40
 
         track opcs_APC_plus_mb
@@ -350,7 +350,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 32
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213594a07b7367d740db/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=OPC name=N9 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=OPC name=N9 strand=plus
         color 106,61,154
 
         track opcs_APC_minus_mb
@@ -361,7 +361,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 33
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135d55297fca444a2b2/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=OPC name=N9 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=OPC name=N9 strand=minus
         color 53,30,77
 
         track opcs_APC_plus_mtg
@@ -371,7 +371,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 34
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a4721350273fe9c11f042a5/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=OPC name=N9 strand=plus
+        subGroups normalization=APC region=MTG cell=OPC name=N9 strand=plus
         color 106,61,154
 
         track opcs_APC_minus_mtg
@@ -382,7 +382,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 35
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135ac4c575e07b8fe2f/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=OPC name=N9 strand=minus
+        subGroups normalization=APC region=MTG cell=OPC name=N9 strand=minus
         color 53,30,77
 
         track pericytes_APC_plus_mb
@@ -392,7 +392,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 36
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fe7dd23075091a2d/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=PERI name=N10 strand=plus
+        subGroups normalization=APC region=MIDBRAIN cell=PERI name=N10 strand=plus
         color 116,196,118
 
         track pericytes_APC_minus_mb
@@ -403,7 +403,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 37
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213532c32c5c7d8504d0/display?to_ext=bigwig
-        subGroups view=APC region=MIDBRAIN cell=PERI name=N10 strand=minus
+        subGroups normalization=APC region=MIDBRAIN cell=PERI name=N10 strand=minus
         color 58,98,59
 
         track pericytes_APC_plus_mtg
@@ -413,7 +413,7 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 38
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213563919473602f9fe2/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=PERI name=N10 strand=plus
+        subGroups normalization=APC region=MTG cell=PERI name=N10 strand=plus
         color 116,196,118
 
         track pericytes_APC_minus_mtg
@@ -424,18 +424,18 @@ sortOrder region=+ name=+ view=+ strand=+
         type bigWig
         priority 39
         bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a47213581c71c17b72b68b5/display?to_ext=bigwig
-        subGroups view=APC region=MTG cell=PERI name=N10 strand=minus
+        subGroups normalization=APC region=MTG cell=PERI name=N10 strand=minus
         color 58,98,59
 
     track combined_brainregion_PW
     parent combined_brainregion
     shortLabel PW
     longLabel PW normalized RNA-seq
-    view PW
-    subGroups view=PW
+    normalization PW
+    subGroups normalization=PW
     type bigWig
     visibility hide
-    viewUi on
+    normalizationUi on
     aggregate transparentOverlay
     maxHeightPixels 100:60:5
     autoScale on
@@ -449,7 +449,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Astrocytes PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135e5f30c8b6e5a4e15/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=ASTRO name=N1 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=ASTRO name=N1 strand=plus
         color 255,100,0
 
         track astrocytes_PW_minus
@@ -458,7 +458,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Astrocytes PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135ea455ac3027da576/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=ASTRO name=N1 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=ASTRO name=N1 strand=minus
         color 255,100,0
 
         track cd8t_PW_plus
@@ -467,7 +467,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel CD8TCells PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721355206225b37a8e0a6/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=CD8T name=N2 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=CD8T name=N2 strand=plus
         color 255,100,0
 
         track cd8t_PW_minus
@@ -476,7 +476,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel CD8TCells PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549d6d8b649d7f2ca/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=CD8T name=N2 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=CD8T name=N2 strand=minus
         color 255,100,0
 
         track endothelial_PW_plus
@@ -485,7 +485,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Endothelialcell PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135bb7a2443905f0cc6/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=ENDO name=N3 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=ENDO name=N3 strand=plus
         color 255,100,0
 
         track endothelial_PW_minus
@@ -494,7 +494,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Endothelialcell PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135fa868e3dcc480899/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=ENDO name=N3 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=ENDO name=N3 strand=minus
         color 255,100,0
 
         track gaba_PW_plus
@@ -503,7 +503,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel GABAneurons PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721352c77ecea3b2663cc/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=GABA name=N4 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=GABA name=N4 strand=plus
         color 255,100,0
 
         track gaba_PW_minus
@@ -512,7 +512,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel GABAneurons PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721358701d34b6a557b29/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=GABA name=N4 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=GABA name=N4 strand=minus
         color 255,100,0
 
         track glu_PW_plus
@@ -521,7 +521,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Gluneurons PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213564eec7dfa98cae0e/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=GLU name=N5 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=GLU name=N5 strand=plus
         color 255,100,0
 
         track glu_PW_minus
@@ -530,7 +530,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Gluneurons PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135a15c450fa8ae18b3/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=GLU name=N5 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=GLU name=N5 strand=minus
         color 255,100,0
 
         track microglia_PW_plus
@@ -539,7 +539,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Microglia PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721354f2d625734662d4d/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=MICRO name=N6 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=MICRO name=N6 strand=plus
         color 255,100,0
 
         track microglia_PW_minus
@@ -548,7 +548,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Microglia PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135df6556005f621ea2/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=MICRO name=N6 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=MICRO name=N6 strand=minus
         color 255,100,0
 
         track monocytes_PW_plus
@@ -557,7 +557,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Monocytes PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a47213549e7cd0145517016/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=MONO name=N7 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=MONO name=N7 strand=plus
         color 255,100,0
 
         track monocytes_PW_minus
@@ -566,7 +566,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Monocytes PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135a738740a760b3a97/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=MONO name=N7 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=MONO name=N7 strand=minus
         color 255,100,0
 
         track oligodendrocytes_PW_plus
@@ -575,7 +575,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Oligodendrocytes PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135dff61178d479a2bd/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=OLIGO name=N8 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=OLIGO name=N8 strand=plus
         color 255,100,0
 
         track oligodendrocytes_PW_minus
@@ -584,7 +584,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Oligodendrocytes PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135614da76de49fe6d3/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=OLIGO name=N8 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=OLIGO name=N8 strand=minus
         color 255,100,0
 
         track opcs_PW_plus
@@ -593,7 +593,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel OPCs PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a472135f7ca4e326386e7a6/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=OPC name=N9 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=OPC name=N9 strand=plus
         color 255,100,0
 
         track opcs_PW_minus
@@ -602,7 +602,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel OPCs PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721357bdfd6866e1c3f27/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=OPC name=N9 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=OPC name=N9 strand=minus
         color 255,100,0
 
         track pericytes_PW_plus
@@ -611,7 +611,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Pericytes PW mean_by_donor plus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721350e08fb3f75ff0978/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=PERI name=N10 strand=plus
+        subGroups normalization=PW region=MIDBRAIN cell=PERI name=N10 strand=plus
         color 255,100,0
 
         track pericytes_PW_minus
@@ -620,7 +620,7 @@ sortOrder region=+ name=+ view=+ strand=+
         longLabel Pericytes PW mean_by_donor minus
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721354f60a872274adbe1/display?to_ext=bigwig
-        subGroups view=PW region=MIDBRAIN cell=PERI name=N10 strand=minus
+        subGroups normalization=PW region=MIDBRAIN cell=PERI name=N10 strand=minus
         color 255,100,0
 
 ############################################
@@ -639,14 +639,14 @@ parent RNAseq_PD
 type bigWig
 subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MTG_S1=MTG_S1 MTG_S2=MTG_S2
-subGroup3 view Views signal=Signal
+subGroup3 normalization normalizations signal=Signal
 subGroup4 name Name N1=Nadan N2=Madan
-dimensions dimX=region dimY=name dimA=view
-sortOrder region=+ sample=+ view=+
+dimensions dimX=region dimY=name dimA=normalization
+sortOrder region=+ sample=+ normalization=+
 
     track RNAseqSignal
     shortLabel Signal
-    view signal
+    normalization signal
     visibility full
     autoScale on
     alwaysZero on
@@ -662,7 +662,7 @@ sortOrder region=+ sample=+ view=+
         longLabel RNA-seq signal (Midbrain Sample 1)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MB_S1_URL/display?to_ext=bigwig
-        subGroups view=signal region=MIDBRAIN sample=MB_S1 name=N1
+        subGroups normalization=signal region=MIDBRAIN sample=MB_S1 name=N1
         color 0,150,0
 
         track midbrain_rnaseq_s2_signal
@@ -671,7 +671,7 @@ sortOrder region=+ sample=+ view=+
         longLabel RNA-seq signal (Midbrain Sample 2)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MB_S2_URL/display?to_ext=bigwig
-        subGroups view=signal region=MIDBRAIN sample=MB_S2 name=N2
+        subGroups normalization=signal region=MIDBRAIN sample=MB_S2 name=N2
         color 0,200,100
 
         track mtg_rnaseq_s1_signal
@@ -680,7 +680,7 @@ sortOrder region=+ sample=+ view=+
         longLabel RNA-seq signal (MTG Sample 1)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MTG_S1_URL/display?to_ext=bigwig
-        subGroups view=signal region=MTG sample=MTG_S1 name=N1
+        subGroups normalization=signal region=MTG sample=MTG_S1 name=N1
         color 0,150,0
 
         track mtg_rnaseq_s2_signal
@@ -689,5 +689,5 @@ sortOrder region=+ sample=+ view=+
         longLabel RNA-seq signal (MTG Sample 2)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MTG_S2_URL/display?to_ext=bigwig
-        subGroups view=signal region=MTG sample=MTG_S2 name=N2
+        subGroups normalization=signal region=MTG sample=MTG_S2 name=N2
         color 0,200,100
