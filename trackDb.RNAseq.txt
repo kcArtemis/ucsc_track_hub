@@ -37,7 +37,7 @@ sortOrder region=+ name=+ view=+ strand=+
     view APC
     subGroups view=APC
     type bigWig
-    visibility full
+    visibility hide
     viewUi on
     aggregate transparentOverlay
     maxHeightPixels 100:60:5
