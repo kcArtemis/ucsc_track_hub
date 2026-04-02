@@ -39,6 +39,7 @@ sortOrder region=+ name=+ view=+ strand=+
     type bigWig
     visibility full
     viewUi on
+    aggregate transparentOverlay
     maxHeightPixels 100:60:5
     autoScale on
     alwaysZero on
@@ -433,8 +434,9 @@ sortOrder region=+ name=+ view=+ strand=+
     view PW
     subGroups view=PW
     type bigWig
-    visibility full
+    visibility hide
     viewUi on
+    aggregate transparentOverlay
     maxHeightPixels 100:60:5
     autoScale on
     alwaysZero on
