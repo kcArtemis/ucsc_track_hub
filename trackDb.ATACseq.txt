@@ -346,7 +346,7 @@ sortOrder region=+ name=+ view=+
         shortLabel Micro PW MB
         longLabel Microglia PW mean_by_donor
         type bigWig
-        bigDataUrl https://usegalaxy.org/datasets/f9cad7b01a4721354f2d625734662d4d/display?to_ext=bigwig
+        bigDataUrl https://usegalaxy.org/api/datasets/f9cad7b01a472135444f4ee58a070bdb/display?to_ext=bigwig
         subGroups view=PW region=MIDBRAIN cell=MICRO name=N6 
         color 255,100,0
 
