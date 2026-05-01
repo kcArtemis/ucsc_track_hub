@@ -438,9 +438,9 @@ parent ATACseq_PD
 type bigWig
 subGroup1 region Region MIDBRAIN=Midbrain MTG=MTG
 subGroup2 sample Sample MB_S1=MB_S1 MB_S2=MB_S2 MTG_S1=MTG_S1 MTG_S2=MTG_S2
-subGroup3 view Views signal=Signal
-subGroup4 name Name N1=Nadan N2=Madan
-dimensions dimX=region dimY=name dimA=view
+subGroup3 view Views APC=APC PW=PW
+subGroup4 cell CellType ASTRO=Astrocytes CD8T=CD8T ENDO=Endothelialcell GABA=GABAneurons GLU=Gluneurons MICRO=Microglia MONO=Monocytes OLIGO=Oligodendrocytes OPC=OPCs PERI=Pericytes
+dimensions dimX=region dimY=cell dimA=view
 sortOrder region=+ sample=+ view=+
 
     track ATACseqSignal
@@ -461,7 +461,7 @@ sortOrder region=+ sample=+ view=+
         longLabel ATAC-seq signal (Midbrain Sample 1)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MB_S1_URL/display?to_ext=bigwig
-        subGroups view=signal region=MIDBRAIN sample=MB_S1 name=N1
+        subGroups view=APC region=MIDBRAIN sample=MB_S1 cell=ASTRO
         color 0,150,0
 
         track midbrain_atacseq_s2_signal
@@ -470,7 +470,7 @@ sortOrder region=+ sample=+ view=+
         longLabel ATAC-seq signal (Midbrain Sample 2)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MB_S2_URL/display?to_ext=bigwig
-        subGroups view=signal region=MIDBRAIN sample=MB_S2 name=N2
+        subGroups view=APC region=MIDBRAIN sample=MB_S2 cell=ENDO
         color 0,200,100
 
         track mtg_atacseq_s1_signal
@@ -479,7 +479,7 @@ sortOrder region=+ sample=+ view=+
         longLabel ATAC-seq signal (MTG Sample 1)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MTG_S1_URL/display?to_ext=bigwig
-        subGroups view=signal region=MTG sample=MTG_S1 name=N1
+        subGroups view=PW region=MTG sample=MTG_S1 cell=MICRO
         color 0,150,0
 
         track mtg_atacseq_s2_signal
@@ -488,5 +488,5 @@ sortOrder region=+ sample=+ view=+
         longLabel ATAC-seq signal (MTG Sample 2)
         type bigWig
         bigDataUrl https://usegalaxy.org/datasets/REPLACE_WITH_MTG_S2_URL/display?to_ext=bigwig
-        subGroups view=signal region=MTG sample=MTG_S2 name=N2
+        subGroups view=PW region=MTG sample=MTG_S2 cell=OPC
         color 0,200,100
